@@ -4,10 +4,13 @@
 \alias{exposures_pData}
 \title{Exposures and phenotyphes data}
 \usage{
-exposures_pData(exposomeSet)
+exposures_pData(exposomeSet, target = "all")
 }
 \arguments{
 \item{exposomeSet}{\code{ExposomeSet} Exposome Set object}
+
+\item{target}{\code{character} To specify target of output table, \code{all} to include exposures and phenotypes,
+\code{exposures} to include only the exposures and \code{phenotypes} to include only the phenotypes. Default \code{all}}
 }
 \value{
 \code{data.frame} With exposures and phenotypes
