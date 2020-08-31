@@ -1,6 +1,9 @@
 AssignMethods:
   loadExposomeDS,
-  exposures_pData
+  exposures_pData,
+  scaleDS,
+  subset_typeDS
 AggregateMethods:
   exposureNamesDS,
-  phenotypeNamesDS
+  phenotypeNamesDS,
+  BoxPlotDS.b
