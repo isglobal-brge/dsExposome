@@ -6,6 +6,12 @@
 #' @param exposures \code{data.frame} With the exposures of the exposome
 #' @param description \code{data.frame} With the description of the exposome
 #' @param phenotype \code{data.frame} With the phenotype of the exposome
+#' @param exposures.idcol \code{character} (default \code{"idcol"}) Name of the column in the Exposures file
+#' that contains the individuals ID
+#' @param phenotypes.idcol \code{character} (default \code{"idcol"}) Name of the column in the Phenotypes file
+#' that contains the individuals ID
+#' @param description.expCol \code{character} (default \code{"exposure"}) Name of the column in the Description file
+#' that contains the Exposure names
 #' @param description.famCol (default \code{"family"}) Index where the family's
 #' name (per exposures) if found in file "description". It can be both numeric
 #' or character.
@@ -19,9 +25,21 @@
 #' @import rexposome
 #'
 
-loadExposomeDS <- function(exposures, description, phenotype, description.famCol = "family",
-                           exposures.asFactor = 5, warnings = TRUE) {
+loadExposomeDS <- function(exposures, description, phenotype, exposures.idcol = "idcol", phenotypes.idcol = "idcol",
+                           description.expCol = "exposure", description.famCol = "family", 
+                           exposures.asFactor = 5, warnings = FALSE) {
   
+  # Exposures, assign rownames using the exposures.idcol column. Rownames of exposures files correspond to individuals ID
+  row.names(exposures) <- exposures[, exposures.idcol]
+  exposures <- exposures[ , !(names(exposures) %in% exposures.idcol)]
+
+  # Phenotype, assign rownames using the phenotypes.idcol column. Rownames of phenotypes files correspond to individuals ID
+  row.names(phenotype) <- phenotype[, phenotypes.idcol]
+  phenotype <- phenotype[ , !(names(phenotype) %in% phenotypes.idcol)]
+  
+  # Description, assign rownames using the description.expCol column. Rownames of description files correspond to Exposure names
+  row.names(description) <- description[, description.expCol]
+  description <- description[ , !(names(description) %in% description.expCol)]
   
   exposome <- rexposome::loadExposome(exposures, description, phenotype, description.famCol,
                                       exposures.asFactor, warnings)

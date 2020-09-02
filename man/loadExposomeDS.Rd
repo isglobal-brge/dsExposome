@@ -8,9 +8,12 @@ loadExposomeDS(
   exposures,
   description,
   phenotype,
+  exposures.idcol = "idcol",
+  phenotypes.idcol = "idcol",
+  description.expCol = "exposure",
   description.famCol = "family",
   exposures.asFactor = 5,
-  warnings = TRUE
+  warnings = FALSE
 )
 }
 \arguments{
@@ -19,6 +22,15 @@ loadExposomeDS(
 \item{description}{\code{data.frame} With the description of the exposome}
 
 \item{phenotype}{\code{data.frame} With the phenotype of the exposome}
+
+\item{exposures.idcol}{\code{character} (default \code{"idcol"}) Name of the column in the Exposures file
+that contains the individuals ID}
+
+\item{phenotypes.idcol}{\code{character} (default \code{"idcol"}) Name of the column in the Phenotypes file
+that contains the individuals ID}
+
+\item{description.expCol}{\code{character} (default \code{"exposure"}) Name of the column in the Description file
+that contains the Exposure names}
 
 \item{description.famCol}{(default \code{"family"}) Index where the family's
 name (per exposures) if found in file "description". It can be both numeric
