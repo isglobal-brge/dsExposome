@@ -30,16 +30,18 @@ loadExposomeDS <- function(exposures, description, phenotype, exposures.idcol = 
                            exposures.asFactor = 5, warnings = FALSE) {
   
   # Exposures, assign rownames using the exposures.idcol column. Rownames of exposures files correspond to individuals ID
-  stop(paste0(dim(exposures[, exposures.idcol])))
-  row.names(exposures) <- exposures[, exposures.idcol]
+  exposures <- as.data.frame(exposures)
+  row.names(exposures) <- unlist(exposures[, exposures.idcol])
   exposures <- exposures[ , !(names(exposures) %in% exposures.idcol)]
 
   # Phenotype, assign rownames using the phenotypes.idcol column. Rownames of phenotypes files correspond to individuals ID
-  row.names(phenotype) <- phenotype[, phenotypes.idcol]
+  phenotype <- as.data.frame(phenotype)
+  row.names(phenotype) <- unlist(phenotype[, phenotypes.idcol])
   phenotype <- phenotype[ , !(names(phenotype) %in% phenotypes.idcol)]
   
   # Description, assign rownames using the description.expCol column. Rownames of description files correspond to Exposure names
-  row.names(description) <- description[, description.expCol]
+  description <- as.data.frame(description)
+  row.names(description) <- unlist(description[, description.expCol])
   description <- description[ , !(names(description) %in% description.expCol)]
   
   exposome <- rexposome::loadExposome(exposures, description, phenotype, description.famCol,
