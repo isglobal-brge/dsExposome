@@ -30,6 +30,7 @@ loadExposomeDS <- function(exposures, description, phenotype, exposures.idcol = 
                            exposures.asFactor = 5, warnings = FALSE) {
   
   # Exposures, assign rownames using the exposures.idcol column. Rownames of exposures files correspond to individuals ID
+  print(exposures[, exposures.idcol])
   row.names(exposures) <- exposures[, exposures.idcol]
   exposures <- exposures[ , !(names(exposures) %in% exposures.idcol)]
 
