@@ -6,4 +6,5 @@ AssignMethods:
 AggregateMethods:
   exposureNamesDS,
   phenotypeNamesDS,
-  BoxPlotDS.b
+  BoxPlotDS.b,
+  tableMissingsDS
