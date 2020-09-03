@@ -7,5 +7,4 @@ AggregateMethods:
   exposureNamesDS,
   phenotypeNamesDS,
   BoxPlotDS.b,
-  tableMissingsDS,
-  plotMissingsDS
+  tableMissingsDS
