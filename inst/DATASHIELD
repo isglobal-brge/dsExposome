@@ -8,4 +8,5 @@ AggregateMethods:
   phenotypeNamesDS,
   BoxPlotDS.b,
   tableMissingsDS,
-  normalityTestDS
+  normalityTestDS,
+  shapiro.testDS
