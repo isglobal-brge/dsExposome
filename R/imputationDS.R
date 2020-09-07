@@ -9,7 +9,7 @@
 #' @return \code{ExposomeSet} Imputed Exposome Set
 #'
 
-imputationDS <- function(object){
+imputationDS <- function(object, select){
   if(is.null(select)){
     imp_set <- rexposome::imputation(object, messages = FALSE)
   }
