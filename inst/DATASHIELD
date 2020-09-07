@@ -2,7 +2,8 @@ AssignMethods:
   loadExposomeDS,
   exposures_pData,
   scaleDS,
-  subset_typeDS
+  subset_typeDS,
+  imputationDS
 AggregateMethods:
   exposureNamesDS,
   phenotypeNamesDS,
