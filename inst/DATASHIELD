@@ -10,4 +10,5 @@ AggregateMethods:
   BoxPlotDS.b,
   tableMissingsDS,
   normalityTestDS,
-  shapiro.testDS
+  shapiro.testDS,
+  familyNamesDS
