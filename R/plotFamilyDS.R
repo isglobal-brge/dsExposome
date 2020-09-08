@@ -136,14 +136,14 @@ plotFamilyDS <- function(x, family, group, group2, scatter = TRUE, na.omit=TRUE)
       grid::viewport(layout.pos.row = x, layout.pos.col = y)
     }
     
-    nc <- round(sqrt(length(familyNames(obj))))
-    if(nc * nc < length(familyNames(obj))) {
+    nc <- round(sqrt(length(rexposome::familyNames(obj))))
+    if(nc * nc < length(rexposome::familyNames(obj))) {
       nr <- nc + 1
     } else {
       nr <- nc
     }
     de
-    ff <- familyNames(obj)
+    ff <- rexposome::familyNames(obj)
     
     grid::grid.newpage()
     grid::pushViewport(grid::viewport(layout = grid::grid.layout(nr, nc)))
