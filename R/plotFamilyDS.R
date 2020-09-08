@@ -208,11 +208,11 @@ plotFamilyDS <- function(x, family, group, group2, scatter = TRUE, na.omit=TRUE)
   if (typ == "numeric") {
     plt <- plot_exposure_numericDS(x, family, group, group2, scatter, na.omit)
     print(plt)
-    return(invisible())
+    return(ggplot2::ggplotGrob(plt))
   } else if (typ == "factor") {
     plt <- plot_exposure_factorDS(x, family, group, group2, na.omit)
     print(plt)
-    return(invisible())
+    return(ggplot2::ggplotGrob(plt))
   } else {
     stop("Plot for mixed family is not implemented.")
   }
