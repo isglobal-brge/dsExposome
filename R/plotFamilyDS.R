@@ -175,6 +175,7 @@ plotFamilyDS <- function(x, family, group, group2, scatter = TRUE, na.omit=TRUE)
     
   }
 
+  return(rexposome::expos(x))
   # If family is 'all' all the exposome is shown
   if(tolower(family) == "all") {
     
