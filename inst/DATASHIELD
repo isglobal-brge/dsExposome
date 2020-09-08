@@ -11,4 +11,5 @@ AggregateMethods:
   tableMissingsDS,
   normalityTestDS,
   shapiro.testDS,
-  familyNamesDS
+  familyNamesDS,
+  plotFamilyDS
