@@ -7,11 +7,11 @@ plotFamilyDS <- function(x, family, group, group2, scatter = TRUE, na.omit=TRUE)
     data <- family_typeDS(x, family, as.type=TRUE)
     if (!is.na(group)) {
       if(!is.na(group2)) {
-        gData <- pData(x)[, c(group, group2), drop=FALSE]
+        gData <- Biobase::pData(x)[, c(group, group2), drop=FALSE]
         colnames(gData) <- c("group1", "group2")
         n <- 2
       } else {
-        gData <- pData(x)[, group, drop=FALSE]
+        gData <- Biobase::pData(x)[, group, drop=FALSE]
         colnames(gData) <- "group"
         n <- 1
       }
