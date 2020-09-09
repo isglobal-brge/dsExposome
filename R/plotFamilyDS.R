@@ -77,6 +77,7 @@ plotFamilyDS <- function(x, family, group, group2, scatter = TRUE, na.omit=TRUE)
   plot_exposure_numericDS <- function(x, family, group = NA, group2 = NA, scatter = TRUE, na.omit=TRUE){
     
     data <- get_exposuresDS(x, family, group, group2, na.omit)
+    data$value <- dsBase::scatterPlotDS(data$value, data$value, 1, 3, 10)[[2]]
     
     # Design the plot
     if (!is.na(group)) {
@@ -102,9 +103,7 @@ plotFamilyDS <- function(x, family, group, group2, scatter = TRUE, na.omit=TRUE)
     plot <- plot + ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 90, hjust = 1))
     plot <- plot + ggplot2::ylab("Measure")
     plot <- plot + ggplot2::xlab("Exposure")
-    #plot <- plot + ggplot2::ggtitle(main)
-    # /
-    # ggplot2::ggplot_build(plot)
+    
     plot
     
   }
@@ -156,7 +155,9 @@ plotFamilyDS <- function(x, family, group, group2, scatter = TRUE, na.omit=TRUE)
           if (typ == "numeric") {
             plt <- plot_exposure_numericDS(obj, family = ff[idx], scatter = FALSE)
           } else if (typ == "factor") {
-            plt <- plot_exposure_factorDS(obj, family = ff[idx])
+            # plt <- plot_exposure_factorDS(obj, family = ff[idx])
+            plt <- ggplot2::ggplot() + ggplot2::theme_void()
+            warning(paste0("Family ", ff[idx], " is not numeric and won't be displayed."))
           } else {
             stop("Plot for mixed family is not implemented.")
           }
@@ -172,7 +173,7 @@ plotFamilyDS <- function(x, family, group, group2, scatter = TRUE, na.omit=TRUE)
         }
       }
     }
-    
+    return(recordPlot())
   }
 
   # If family is 'all' all the exposome is shown
@@ -207,12 +208,9 @@ plotFamilyDS <- function(x, family, group, group2, scatter = TRUE, na.omit=TRUE)
   typ <- family_typeDS(x, family)
   if (typ == "numeric") {
     plt <- plot_exposure_numericDS(x, family, group, group2, scatter, na.omit)
-    print(plt)
-    return(ggplot2::ggplot_gtable(ggplot2::ggplot_build(plt)))
+    return(ggplot2::ggplot_build(plt))
   } else if (typ == "factor") {
-    plt <- plot_exposure_factorDS(x, family, group, group2, na.omit)
-    print(plt)
-    return(ggplot2::ggplot_gtable(ggplot2::ggplot_build(plt)))
+    stop(paste0("Family ", family, " is not numeric and won't be displayed."))
   } else {
     stop("Plot for mixed family is not implemented.")
   }
