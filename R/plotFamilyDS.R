@@ -1,7 +1,4 @@
-plotFamilyDS <- function(x, family, group = NA, group2 = NA, scatter = TRUE, na.omit=TRUE){
-  
-  # Force scatter FALSE to prevent disclosive issues
-  scatter <- FALSE
+plotFamilyDS <- function(x, family, group = NA, group2 = NA, scatter = TRUE, na.omit=TRUE, method, k, noise){
   
   get_exposuresDS <- function(x, family, group = NA, group2 = NA, na.omit = TRUE) {
     data <- family_typeDS(x, family, as.type=TRUE)
@@ -74,10 +71,10 @@ plotFamilyDS <- function(x, family, group = NA, group2 = NA, scatter = TRUE, na.
     }
   }
   
-  plot_exposure_numericDS <- function(x, family, group = NA, group2 = NA, scatter = TRUE, na.omit=TRUE){
+  plot_exposure_numericDS <- function(x, family, group = NA, group2 = NA, scatter = TRUE, na.omit=TRUE, method, k, noise){
     
     data <- get_exposuresDS(x, family, group, group2, na.omit)
-    data$value <- dsBase::scatterPlotDS(data$value, data$value, 1, 3, 10)[[2]]
+    data$value <- dsBase::scatterPlotDS(data$value, data$value, method, k, noise)[[2]]
     
     # Design the plot
     if (!is.na(group)) {
@@ -163,7 +160,7 @@ plotFamilyDS <- function(x, family, group = NA, group2 = NA, scatter = TRUE, na.
 
   typ <- family_typeDS(x, family)
   if (typ == "numeric") {
-    plt <- plot_exposure_numericDS(x, family, group, group2, scatter, na.omit)
+    plt <- plot_exposure_numericDS(x, family, group, group2, scatter, na.omit, method, k, noise)
     return(plt)
   } else if (typ == "factor") {
     # plt <- ggplot2::ggplot() + ggplot2::theme_void()
