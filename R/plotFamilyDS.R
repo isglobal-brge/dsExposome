@@ -1,4 +1,4 @@
-plotFamilyDS <- function(x, family, group, group2, scatter = TRUE, na.omit=TRUE){
+plotFamilyDS <- function(x, family, group = NA, group2 = NA, scatter = TRUE, na.omit=TRUE){
   
   # Force scatter FALSE to prevent disclosive issues
   scatter <- FALSE
@@ -130,51 +130,7 @@ plotFamilyDS <- function(x, family, group, group2, scatter = TRUE, na.omit=TRUE)
     plot
   }
   
-  plot_exposomeDS <- function(obj) {
-    vplayout <- function(x, y) {
-      grid::viewport(layout.pos.row = x, layout.pos.col = y)
-    }
-    
-    nc <- round(sqrt(length(rexposome::familyNames(obj))))
-    if(nc * nc < length(rexposome::familyNames(obj))) {
-      nr <- nc + 1
-    } else {
-      nr <- nc
-    }
-    de
-    ff <- rexposome::familyNames(obj)
-    
-    grid::grid.newpage()
-    grid::pushViewport(grid::viewport(layout = grid::grid.layout(nr, nc)))
-    
-    idx <- 1
-    for(ii in 1:nr) {
-      for(jj in 1:nc) {
-        if(idx < length(ff) + 1) {
-          typ <- family_typeDS(obj, ff[idx])
-          if (typ == "numeric") {
-            plt <- plot_exposure_numericDS(obj, family = ff[idx], scatter = FALSE)
-          } else if (typ == "factor") {
-            # plt <- plot_exposure_factorDS(obj, family = ff[idx])
-            plt <- ggplot2::ggplot() + ggplot2::theme_void()
-            warning(paste0("Family ", ff[idx], " is not numeric and won't be displayed."))
-          } else {
-            stop("Plot for mixed family is not implemented.")
-          }
-          plt <- plt + ggplot2::ggtitle(ff[idx])
-          if(jj != 1) {
-            plt <- plt + ggplot2::ylab("")
-          }
-          if(ii != nr) {
-            plt <- plt + ggplot2::xlab("")
-          }
-          print(plt, vp = vplayout(ii, jj))
-          idx <- idx + 1
-        }
-      }
-    }
-    return(recordPlot())
-  }
+ 
 
   # If family is 'all' all the exposome is shown
   if(tolower(family) == "all") {
@@ -208,9 +164,11 @@ plotFamilyDS <- function(x, family, group, group2, scatter = TRUE, na.omit=TRUE)
   typ <- family_typeDS(x, family)
   if (typ == "numeric") {
     plt <- plot_exposure_numericDS(x, family, group, group2, scatter, na.omit)
-    return(ggplot2::ggplot_build(plt))
+    return(plt)
   } else if (typ == "factor") {
-    stop(paste0("Family ", family, " is not numeric and won't be displayed."))
+    plt <- ggplot2::ggplot() + ggplot2::theme_void()
+    warning(paste0("Family ", family, " is not numeric and won't be displayed."))
+    return(plt)
   } else {
     stop("Plot for mixed family is not implemented.")
   }
