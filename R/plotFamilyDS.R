@@ -1,3 +1,22 @@
+#' @title Draw boxplot of a family of an Exposome Set
+#'
+#' @param x \code{ExposomeSet} Exposome Set object
+#' @param family \code{character} Name of the familty that will be drawn
+#' @param group \code{character} If set it displays the family grouped by the given phenotype
+#' @param group2 \code{character} If set it displays the family grouped by the given phenotype
+#' @param scatter \code{bool} (default \code{TRUE}) If the family to be plotted is continuous, the samples will be shown
+#' @param na.omit \code{bool} (default \code{TRUE}) Do not show NA values
+#' @param method \code{numeric} either 1 or 2. If the user selects the deterministic method in the 
+#' client side function the method.inticator is set to 1 while if the user selects the probabilistic method this argument is set to 2.
+#' @param k \code{numeric} the number of the nearest neghbours for which their centroid is calculated 
+#' if the deterministic method is selected.
+#' @param noise \code{numeric} the percentage of the initial variance that is used as the variance of 
+#' the embedded noise if the probabilistic method is selected.
+#'
+#' @return
+#' Returns a ggplot object
+#' 
+
 plotFamilyDS <- function(x, family, group = NA, group2 = NA, scatter = TRUE, na.omit=TRUE, method, k, noise){
   
   get_exposuresDS <- function(x, family, group = NA, group2 = NA, na.omit = TRUE) {
@@ -107,7 +126,7 @@ plotFamilyDS <- function(x, family, group = NA, group2 = NA, scatter = TRUE, na.
   
   plot_exposure_factorDS <- function(x, family, group = NA, group2 = NA, na.omit = TRUE) {
     data <- get_exposuresDS(x, family, group, group2, na.omit)
-    
+    # return(data)
     plot <- ggplot2::ggplot(data, ggplot2::aes_string(x = "exposures", fill = "value"))
     if (!is.na(group)) {
       if(is.na(group2)) {
@@ -126,15 +145,6 @@ plotFamilyDS <- function(x, family, group = NA, group2 = NA, scatter = TRUE, na.
     # /
     plot
   }
-  
- 
-
-  # If family is 'all' all the exposome is shown
-  if(tolower(family) == "all") {
-    
-    return(plot_exposomeDS(x))
-  }
-  # /
 
   if (!family %in% stringr::str_replace_all(rexposome::familyNames(x), " ", "")) {
     stop("Given family '", family, "' not in ExposomeSet (description).")
@@ -163,6 +173,7 @@ plotFamilyDS <- function(x, family, group = NA, group2 = NA, scatter = TRUE, na.
     plt <- plot_exposure_numericDS(x, family, group, group2, scatter, na.omit, method, k, noise)
     return(plt)
   } else if (typ == "factor") {
+    # plt <- plot_exposure_factorDS(x, family, group, group2, na.omit)
     # plt <- ggplot2::ggplot() + ggplot2::theme_void()
     # warning(paste0("Family ", family, " is not numeric and won't be displayed."))
     # return(plt)
