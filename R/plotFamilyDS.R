@@ -51,7 +51,7 @@ plotFamilyDS <- function(x, family, group = NA, group2 = NA, scatter = TRUE, na.
   }
   
   family_typeDS <- function(object, family, as.type = FALSE) {
-    exposures <- rownames(Biobase::pData(Biobase::featureData(object)))[Biobase::pData(Biobase::featureData(object))[ , 1] == family]
+    exposures <- rownames(Biobase::pData(Biobase::featureData(object)))[stringr::str_replace_all(Biobase::pData(Biobase::featureData(object))[ , 1], " ", "") == family]
     if(!as.type) {
       type <- unique(Biobase::fData(object)[exposures, ".type"] )
       if(length(type) == 1) {
@@ -139,7 +139,7 @@ plotFamilyDS <- function(x, family, group = NA, group2 = NA, scatter = TRUE, na.
   }
   # /
 
-  if (!family %in% rexposome::familyNames(x)) {
+  if (!family %in% stringr::str_replace_all(rexposome::familyNames(x), " ", "")) {
     stop("Given family '", family, "' not in ExposomeSet (description).")
   }
   if (!is.na(group)) {
