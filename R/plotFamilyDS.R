@@ -166,9 +166,10 @@ plotFamilyDS <- function(x, family, group = NA, group2 = NA, scatter = TRUE, na.
     plt <- plot_exposure_numericDS(x, family, group, group2, scatter, na.omit)
     return(plt)
   } else if (typ == "factor") {
-    plt <- ggplot2::ggplot() + ggplot2::theme_void()
-    warning(paste0("Family ", family, " is not numeric and won't be displayed."))
-    return(plt)
+    # plt <- ggplot2::ggplot() + ggplot2::theme_void()
+    # warning(paste0("Family ", family, " is not numeric and won't be displayed."))
+    # return(plt)
+    return(FALSE)
   } else {
     stop("Plot for mixed family is not implemented.")
   }
