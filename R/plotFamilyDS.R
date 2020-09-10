@@ -171,7 +171,24 @@ plotFamilyDS <- function(x, family, group = NA, group2 = NA, scatter = TRUE, na.
   typ <- family_typeDS(x, family)
   if (typ == "numeric") {
     plt <- plot_exposure_numericDS(x, family, group, group2, scatter, na.omit, method, k, noise)
-    return(plt)
+    plt <- ggplot2::ggplot_build(plt)
+    if(!is.na(group) & is.na(group2)){
+      return(list(plt$data[[1]][, !names(plt$data[[1]]) %in% c("outliers")], unique(get_exposuresDS(x, family, group, group2, na.omit)$exposures),
+                  unique(get_exposuresDS(x, family, group, group2, na.omit)$group), "single_group"))
+    }
+    else if(!is.na(group) & !is.na(group2)){
+      # return(plt)
+      return(list(plt$data[[1]][, !names(plt$data[[1]]) %in% c("outliers")], unique(get_exposuresDS(x, family, group, group2, na.omit)$exposures),
+                  unique(get_exposuresDS(x, family, group, group2, na.omit)$group1), 
+                  unique(get_exposuresDS(x, family, group, group2, na.omit)$group2),
+                  "double_group"))
+    }
+    else{
+      return(list(plt$data[[1]][, !names(plt$data[[1]]) %in% c("outliers")], unique(get_exposuresDS(x, family, group, group2, na.omit)$exposures),
+                  "no_group"))
+    }
+    
+    return(ggplot2::ggplot_build(plt))
   } else if (typ == "factor") {
     # plt <- plot_exposure_factorDS(x, family, group, group2, na.omit)
     # plt <- ggplot2::ggplot() + ggplot2::theme_void()
