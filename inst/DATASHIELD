@@ -3,7 +3,9 @@ AssignMethods:
   exposures_pData,
   scaleDS,
   subset_typeDS,
-  imputationDS
+  imputationDS,
+  boxPlotGG_data_TreatmentDS,
+  plotFamilyDS
 AggregateMethods:
   exposureNamesDS,
   phenotypeNamesDS,
@@ -12,4 +14,4 @@ AggregateMethods:
   normalityTestDS,
   shapiro.testDS,
   familyNamesDS,
-  plotFamilyDS
+  boxPlotGGDS
