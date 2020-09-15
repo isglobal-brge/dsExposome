@@ -1,9 +1,9 @@
 exposomeSubsetDS <- function(set, fam){
   
-  mask <- Biobase::fData(set)$Family==stringr::str_replace_all(fam[1], " ", "")
+  mask <- stringr::str_replace_all(Biobase::fData(set)$Family, " ", "")==fam[1]
   if (length(fam) > 1){
     for (i in 2:length(fam)) {
-      indic <- Biobase::fData(set)$Family==stringr::str_replace_all(fam[i], " ", "")
+      indic <- stringr::str_replace_all(Biobase::fData(set)$Family, " ", "")==fam[i]
       mask <- mask | indic
     }
   }
