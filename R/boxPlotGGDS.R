@@ -62,20 +62,20 @@ boxPlotGGDS <- function(data_table, group = NULL, group2 = NULL){
   plt <- ggplot2::ggplot_build(plot_ret)
 
   if(!is.null(group) & is.null(group2)){
-    return(list(plt$data[[1]][, !names(plt$data[[1]]) %in% c("outliers")], unique(data_table$x),
+    return(list(plt$data[[1]][, !names(plt$data[[1]]) %in% c("outliers", "ymin_final", "ymax_final")], unique(data_table$x),
                 unique(data_table$group),
                 counts = dplyr::count(data_table, x, group),
                 "single_group"))
   }
   else if(!is.null(group) & !is.null(group2)){
-    return(list(plt$data[[1]][, !names(plt$data[[1]]) %in% c("outliers")], unique(data_table$x),
+    return(list(plt$data[[1]][, !names(plt$data[[1]]) %in% c("outliers", "ymin_final", "ymax_final")], unique(data_table$x),
                 unique(data_table$group), 
                 unique(data_table$group2),
                 counts = dplyr::count(data_table, x, group, group2),
                 "double_group"))
   }
   else{
-    return(list(plt$data[[1]][, !names(plt$data[[1]]) %in% c("outliers")], unique(data_table$x),
+    return(list(plt$data[[1]][, !names(plt$data[[1]]) %in% c("outliers", "ymin_final", "ymax_final")], unique(data_table$x),
                 counts = dplyr::count(data_table, x),
                 "no_group"))
   }
