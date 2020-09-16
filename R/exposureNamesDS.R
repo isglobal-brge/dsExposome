@@ -5,7 +5,6 @@
 #' @param exposomeSet \code{ExposomeSet} Exposome Set object
 #'
 #' @return \code{character vector} of the exposure names
-#' @import rexposome
 #' @export
 
 exposureNamesDS <- function(exposomeSet) {

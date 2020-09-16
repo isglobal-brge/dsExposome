@@ -5,7 +5,6 @@
 #' @param exposomeSet \code{ExposomeSet} Exposome Set object
 #'
 #' @return \code{character vector} of the phenotypes names
-#' @import rexposome
 #' @export
 
 phenotypeNamesDS <- function(exposomeSet){

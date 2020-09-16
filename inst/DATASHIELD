@@ -5,6 +5,7 @@ AssignMethods:
   subset_typeDS,
   imputationDS,
   boxPlotGG_data_TreatmentDS,
+  boxPlotGG_data_Treatment_numericDS,
   plotFamilyDS,
   exposomeSubsetDS
 AggregateMethods:

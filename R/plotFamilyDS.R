@@ -6,12 +6,6 @@
 #' @param group2 \code{character} If set it displays the family grouped by the given phenotype
 #' @param scatter \code{bool} (default \code{TRUE}) If the family to be plotted is continuous, the samples will be shown
 #' @param na.omit \code{bool} (default \code{TRUE}) Do not show NA values
-#' @param method \code{numeric} either 1 or 2. If the user selects the deterministic method in the 
-#' client side function the method.inticator is set to 1 while if the user selects the probabilistic method this argument is set to 2.
-#' @param k \code{numeric} the number of the nearest neghbours for which their centroid is calculated 
-#' if the deterministic method is selected.
-#' @param noise \code{numeric} the percentage of the initial variance that is used as the variance of 
-#' the embedded noise if the probabilistic method is selected.
 #'
 #' @return
 #' Returns a ggplot object

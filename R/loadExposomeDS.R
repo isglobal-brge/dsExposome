@@ -22,7 +22,6 @@
 #' @param warnings \code{bool} (default \code{FALSE}) If \code{TRUE} shows useful
 #'
 #' @return An \code{ExposomeSet} object
-#' @import rexposome
 #' @export
 
 loadExposomeDS <- function(exposures, description, phenotype, exposures.idcol = "idcol", phenotypes.idcol = "idcol",
