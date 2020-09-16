@@ -6,7 +6,7 @@
 #'
 #' @return \code{character vector} of the phenotypes names
 #' @import rexposome
-#'
+#' @export
 
 phenotypeNamesDS <- function(exposomeSet){
   data <- rexposome::phenotypeNames(exposomeSet)

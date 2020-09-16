@@ -9,7 +9,7 @@
 #'
 #' @return \code{data.frame} With exposures and phenotypes
 #' @import rexposome, Biobase
-#'
+#' @export
 
 exposures_pData <- function(exposomeSet, target = "all") {
 

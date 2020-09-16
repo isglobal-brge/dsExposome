@@ -5,7 +5,7 @@
 #' @param x \code{numeric} Name of the numeric vector 
 #'
 #' @return Results of the Shapiro-Wilk Normality Test
-#'
+#' @export
  
 shapiro.testDS <- function(x){
   test <- stats::shapiro.test(x)

@@ -1,4 +1,47 @@
-boxPlotGGDS <- function(data_table, group, group2){
+#' @title Create the identity stats and necessary data to draw a plot on the client
+#' 
+#' @description In order to create a non disclosive box plot, the data that is passed to the client
+#' is purely geometrical aspects of the plot, as a ggplot object contains all the data inside, only the graphical
+#' parameters are passed. There are three different cases depending if there are grouping variables. 
+#' The outliers are also removed from the graphical parameters.
+#'
+#' @param data_table \code{data frame} Table that holds the information to be plotted, arranged as: \cr
+#' 
+#'  Column 'x': Names on the X axis of the boxplot, aka variables to plot \cr
+#'  Column 'value': Values for that variable (raw data of columns rbinded) \cr
+#'  Column 'group': (Optional) Values of the grouping variable \cr
+#'  Column 'group2': (Optional) Values of the second grouping variable \cr
+#' 
+#' @param group \code{character} (default \code{NULL}) Name of the first grouping variable. 
+#' @param group2 \code{character} (default \code{NULL}) Name of the second grouping variable. 
+#'
+#' @return If there are no grouping variables: \cr
+#' 
+#' \code{list} with: \cr
+#' -\code{data frame} Geometrical parameters (identity stats of ggplot) \cr
+#' -\code{character list} Names of the variables plotted \cr
+#' -\code{tbl} Counts of each variable, output of dplyr::count (used on the client for split/pooled) \cr
+#' 
+#' If there is one grouping variable: \cr
+#' 
+#' \code{list} with: \cr
+#' -\code{data frame} Geometrical parameters (identity stats of ggplot) \cr
+#' -\code{character list} Names of the variables plotted \cr
+#' -\code{character list} Names of the grouping factors \cr
+#' -\code{tbl} Counts of each variable (grouped), output of dplyr::count (used on the client for split/pooled) \cr
+#' 
+#' If there are two grouping variables: \cr
+#' 
+#' \code{list} with: \cr
+#' -\code{data frame} Geometrical parameters (identity stats of ggplot) \cr
+#' -\code{character list} Names of the variables plotted \cr
+#' -\code{character list} Names of the first grouping factors \cr
+#' -\code{character list} Names of the second grouping factors \cr
+#' -\code{tbl} Counts of each variable (grouped), output of dplyr::count (used on the client for split/pooled) \cr
+#' 
+#' @export
+
+boxPlotGGDS <- function(data_table, group = NULL, group2 = NULL){
   if (!is.null(group)) {
     if(!is.null(group2)) {
       plot_ret <- ggplot2::ggplot(data_table, ggplot2::aes_string(x = "x", y = "value", fill = "group")) +

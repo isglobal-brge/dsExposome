@@ -7,7 +7,7 @@
 #' will be on the output table
 #'
 #' @return \code{data frame} Subsetted table
-#' 
+#' @export
 
 subset_typeDS <- function(table, type){
   

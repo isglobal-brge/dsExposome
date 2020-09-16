@@ -6,7 +6,7 @@
 #' (unique) name of the families of exposures will be returned.
 #'
 #' @return A \code{character vector} with the family names of the Exposome Set
-#' 
+#' @export
 
 familyNamesDS <- function(object, by.exposure = FALSE){
   f_names <- rexposome::familyNames(object, by.exposure)

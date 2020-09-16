@@ -15,7 +15,7 @@
 #'
 #' @return
 #' Returns a ggplot object
-#' 
+#' @export
 
 plotFamilyDS <- function(x, family, group = NA, group2 = NA, scatter = TRUE, na.omit=TRUE){
 

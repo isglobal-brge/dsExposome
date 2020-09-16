@@ -6,7 +6,7 @@
 #'
 #' @return \code{character vector} of the exposure names
 #' @import rexposome
-#'
+#' @export
 
 exposureNamesDS <- function(exposomeSet) {
 

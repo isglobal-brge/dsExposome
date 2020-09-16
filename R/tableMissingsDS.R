@@ -9,6 +9,7 @@
 #' @return
 #' Vector of named numerics, where the name corresponds to the variable and the associated numeric corresponds
 #' to the missing (number or percentage, dependeing on the \code{output} parameter)
+#' @export
 
 tableMissingsDS <- function(exp, set = "exposures", output = "n"){
   data <- rexposome::tableMissings(exp, set, output)

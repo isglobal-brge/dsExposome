@@ -12,7 +12,7 @@
 #' - exposure: \code{character} Name of the exposures \cr
 #' - normality: \code{bool} If exposure is normal (\code{TRUE}) or not (\code{FALSE}) \cr
 #' - p.value: \code{numeric} P-value of the Shapiro-Wilk Normality Test
-#'
+#' @export
 
 normalityTestDS <- function(object, th = 0.05, min.val = 5, na.rm = TRUE,
                             warnings = TRUE){

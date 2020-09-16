@@ -10,10 +10,7 @@ plotFamilyDS(
   group = NA,
   group2 = NA,
   scatter = TRUE,
-  na.omit = TRUE,
-  method,
-  k,
-  noise
+  na.omit = TRUE
 )
 }
 \arguments{

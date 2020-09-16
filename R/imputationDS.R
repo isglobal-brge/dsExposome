@@ -7,7 +7,7 @@
 #' the input Exposome Set will be over written.
 #'
 #' @return \code{ExposomeSet} Imputed Exposome Set
-#'
+#' @export
 
 imputationDS <- function(object, select = NULL){
   if(is.null(select)){

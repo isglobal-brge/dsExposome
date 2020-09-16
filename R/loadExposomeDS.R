@@ -23,7 +23,7 @@
 #'
 #' @return An \code{ExposomeSet} object
 #' @import rexposome
-#'
+#' @export
 
 loadExposomeDS <- function(exposures, description, phenotype, exposures.idcol = "idcol", phenotypes.idcol = "idcol",
                            description.expCol = "exposure", description.famCol = "family", 

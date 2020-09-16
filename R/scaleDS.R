@@ -6,7 +6,7 @@
 #' @param scale Corresponds to the \code{scale} parameter of the base function \code{scale}
 #'
 #' @return \code{data frame} Scaled table
-#' 
+#' @export
 
 scaleDS <- function(x, center = TRUE, scale = TRUE){
   data <- base::scale(x, center, scale)
