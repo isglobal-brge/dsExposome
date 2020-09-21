@@ -43,8 +43,8 @@ exposome_pca_plotDS <- function(object, set, phenotype){
         data = dta,
         ggplot2::aes_string(paste0("Dim.", cmpX), paste0("Dim.", cmpY), label="Label"),
         size = 2,
-        box.padding = ggplot2::unit(0.35, "lines"),
-        point.padding = ggplot2::unit(0.3, "lines"),
+        # box.padding = ggplot2::unit(0.35, "lines"),
+        # point.padding = ggplot2::unit(0.3, "lines"),
         color="#222222",
         segment.color="#BBBBBB"
       ) + ggplot2::theme_bw() + ggplot2::theme(legend.position="none")
