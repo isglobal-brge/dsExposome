@@ -7,7 +7,10 @@ AssignMethods:
   boxPlotGG_data_TreatmentDS,
   boxPlotGG_data_Treatment_numericDS,
   plotFamilyDS,
-  exposomeSubsetDS
+  exposomeSubsetDS,
+  plotPCADS,
+  pcaDS,
+  exposome_pcaDS
 AggregateMethods:
   exposureNamesDS,
   phenotypeNamesDS,
@@ -16,4 +19,6 @@ AggregateMethods:
   normalityTestDS,
   shapiro.testDS,
   familyNamesDS,
-  boxPlotGGDS
+  boxPlotGGDS,
+  pca.getDS,
+  exposome_pca_plotDS
