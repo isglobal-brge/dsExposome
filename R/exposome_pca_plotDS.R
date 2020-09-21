@@ -16,8 +16,8 @@ exposome_pca_plotDS <- function(object, set, phenotype){
   # plot_pca <- rexposome::plotPCA(object, set = set, phenotype = phenotype)
   
   if (set == "exposures") {
-    dta <- extract(object, table = "exposures") #data.frame(object@pca$var$coord)
-    dta$Family <- pData(object@featureData)[rownames(dta), 1]
+    dta <- rexposome::extract(object, table = "exposures") #data.frame(object@pca$var$coord)
+    dta$Family <- Biobase::pData(object@featureData)[rownames(dta), 1]
     dta$Label <- rownames(dta)
     
     if(cmpX >= ncol(dta) | cmpY >= ncol(dta)) {
