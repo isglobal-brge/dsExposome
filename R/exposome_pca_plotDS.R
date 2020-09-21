@@ -35,8 +35,8 @@ exposome_pca_plotDS <- function(object, set, phenotype){
       ggplot2::geom_hline(yintercept = 0, linetype = "dotdash", color = "red", size = 1) +
       ggplot2::geom_vline(xintercept = 0, linetype = "dotdash", color = "red", size = 1) +
       ggplot2::geom_point(ggplot2::aes_string(color = "Family")) +
-      ggplot2::xlab(paste0("PC", cmpX, " (", round(extract(object, table="eigen")[cmpX, 2], 2), "%)")) +
-      ggplot2::ylab(paste0("PC", cmpY, " (", round(extract(object, table="eigen")[cmpY, 2], 2), "%)"))
+      ggplot2::xlab(paste0("PC", cmpX, " (", round(rexposome::extract(object, table="eigen")[cmpX, 2], 2), "%)")) +
+      ggplot2::ylab(paste0("PC", cmpY, " (", round(rexposome::extract(object, table="eigen")[cmpY, 2], 2), "%)"))
     if(show.exposures) {
       ## Add labels for features
       plt <- plt + ggrepel::geom_text_repel(
