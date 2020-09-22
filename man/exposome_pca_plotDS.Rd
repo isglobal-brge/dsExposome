@@ -4,7 +4,7 @@
 \alias{exposome_pca_plotDS}
 \title{Title}
 \usage{
-exposome_pca_plotDS(object, set, phenotype)
+exposome_pca_plotDS(object, set, phenotype, method, k, noise)
 }
 \arguments{
 \item{object}{}

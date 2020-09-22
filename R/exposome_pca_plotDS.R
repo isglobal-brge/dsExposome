@@ -59,4 +59,18 @@ exposome_pca_plotDS <- function(object, set, phenotype, method, k, noise){
                 ylabel = plot_pca$plot$labels$y
     ))
   }
+  else if(set == "exposures_correlation"){
+    plot_pca <- rexposome::plotEXP(object)
+    
+    plot_pca <- ggplot2::ggplot_build(plot_pca)
+    
+    return(list(data = plot_pca$plot$data))
+  }
+  else if(set == "phenotypes_correlation"){
+    plot_pca <- rexposome::plotPHE(object)
+    
+    plot_pca <- ggplot2::ggplot_build(plot_pca)
+    
+    return(list(data = plot_pca$plot$data))
+  }
 }

@@ -10,7 +10,8 @@ AssignMethods:
   exposomeSubsetDS,
   plotPCADS,
   pcaDS,
-  exposome_pcaDS
+  exposome_pcaDS,
+  standardizeDS
 AggregateMethods:
   exposureNamesDS,
   phenotypeNamesDS,
