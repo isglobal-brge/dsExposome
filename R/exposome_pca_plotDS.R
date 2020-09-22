@@ -8,51 +8,39 @@
 #' @export
 #'
 #' @examples
-exposome_pca_plotDS <- function(object, set, phenotype){
-  cmpX <- 1
-  cmpY <- 2
-  show.exposures <- FALSE
+exposome_pca_plotDS <- function(object, set, phenotype, method, k, noise){
   
-  # plot_pca <- rexposome::plotPCA(object, set = set, phenotype = phenotype)
-  
-  if (set == "exposures") {
-    dta <- rexposome::extract(object, table = "exposures") #data.frame(object@pca$var$coord)
-    dta$Family <- Biobase::pData(object@featureData)[rownames(dta), 1]
-    dta$Label <- rownames(dta)
+  if(set == "exposures"){
+    plot_pca <- rexposome::plotPCA(object, set = set, phenotype = phenotype, show.exposures = TRUE, show.samples = FALSE)
     
-    if(cmpX >= ncol(dta) | cmpY >= ncol(dta)) {
-      stop("Given value for 'cmpX' or 'cmpY' larger than computed ",
-           "components (ncp=", ncol(dta)-1, ").")
-    }
+    plot_pca <- ggplot2::ggplot_build(plot_pca)
     
-    plt <- ggplot2::ggplot(dta, ggplot2::aes_string(paste0("Dim.", cmpX), paste0("Dim.", cmpY))) +
-      ggplot2::theme_bw() +
-      ggplot2::theme(
-        panel.grid.major = ggplot2::element_blank(),
-        panel.grid.minor = ggplot2::element_blank(),
-        legend.title = ggplot2::element_blank()
-      ) +
-      # ggplot2::geom_hline(yintercept = 0, linetype = "dotdash", color = "red", size = 1) +
-      # ggplot2::geom_vline(xintercept = 0, linetype = "dotdash", color = "red", size = 1) +
-      ggplot2::geom_point(ggplot2::aes_string(color = "Family"))
-      # ggplot2::xlab(paste0("PC", cmpX, " (", round(rexposome::extract(object, table="eigen")[cmpX, 2], 2), "%)")) +
-      # ggplot2::ylab(paste0("PC", cmpY, " (", round(rexposome::extract(object, table="eigen")[cmpY, 2], 2), "%)"))
-    # if(show.exposures) {
-    #   ## Add labels for features
-    #   plt <- plt + ggrepel::geom_text_repel(
-    #     data = dta,
-    #     ggplot2::aes_string(paste0("Dim.", cmpX), paste0("Dim.", cmpY), label="Label"),
-    #     size = 2,
-    #     box.padding = ggplot2::unit(0.35, "lines"),
-    #     point.padding = ggplot2::unit(0.3, "lines"),
-    #     color="#222222",
-    #     segment.color="#BBBBBB"
-    #   ) + ggplot2::theme_bw() + ggplot2::theme(legend.position="none")
-    #   ## /
-    # }
-    return(ggplot2::ggplot_build(plt))
+    plot_pca$data[[3]]$x <- dsBase::scatterPlotDS(plot_pca$data[[3]]$x, plot_pca$data[[3]]$x, method, k, noise)[[1]]
+    plot_pca$data[[3]]$y <- dsBase::scatterPlotDS(plot_pca$data[[3]]$y, plot_pca$data[[3]]$y, method, k, noise)[[1]]
+    plot_pca$data[[4]]$x <- dsBase::scatterPlotDS(plot_pca$data[[4]]$x, plot_pca$data[[4]]$x, method, k, noise)[[1]]
+    plot_pca$data[[4]]$y <- dsBase::scatterPlotDS(plot_pca$data[[4]]$y, plot_pca$data[[4]]$y, method, k, noise)[[1]]
+    return(list(data = plot_pca$data[[3]],
+                xlabel = plot_pca$plot$labels$x,
+                ylabel = plot_pca$plot$labels$y,
+                fams = plot_pca$plot$data$Family,
+                labels = plot_pca$data[[4]]
+    ))
   }
-  
-  return(plot_pca)
-  
+  else if(set == "samples"){
+    plot_pca <- rexposome::plotPCA(object, set = set, phenotype = phenotype, show.exposures = TRUE, show.samples = FALSE)
+    
+    plot_pca <- ggplot2::ggplot_build(plot_pca)
+    
+    plot_pca$data[[3]]$x <- dsBase::scatterPlotDS(plot_pca$data[[3]]$x, plot_pca$data[[3]]$x, method, k, noise)[[1]]
+    plot_pca$data[[3]]$y <- dsBase::scatterPlotDS(plot_pca$data[[3]]$y, plot_pca$data[[3]]$y, method, k, noise)[[1]]
+    return(list(data = plot_pca$data[[3]],
+                xlabel = plot_pca$plot$labels$x,
+                ylabel = plot_pca$plot$labels$y,
+                pheno = plot_pca$plot$data$phenotype
+    ))
+  }
+  else if(set == "all"){
+    plot_pca <- rexposome:::.plot_explained(object, 1, 2)
+    return(plot_pca)
+  }
 }
