@@ -39,8 +39,24 @@ exposome_pca_plotDS <- function(object, set, phenotype, method, k, noise){
                 pheno = plot_pca$plot$data$phenotype
     ))
   }
-  else if(set == "all"){
+  else if(set == "variance"){
     plot_pca <- rexposome:::.plot_explained(object, 1, 2)
-    return(plot_pca)
+    
+    plot_pca <- ggplot2::ggplot_build(plot_pca)
+    
+    return(list(data = plot_pca$data[[1]],
+                ylabel = plot_pca$plot$labels$y
+                ))
+  }
+  else if(set == "variance_explained"){
+    plot_pca <- rexposome:::.plot_acum (object, 1, 2)
+    
+    plot_pca <- ggplot2::ggplot_build(plot_pca)
+    
+    return(list(data = plot_pca$data[[1]],
+                xline = plot_pca$data[[4]],
+                yline = plot_pca$data[[3]],
+                ylabel = plot_pca$plot$labels$y
+    ))
   }
 }
