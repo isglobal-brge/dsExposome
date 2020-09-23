@@ -10,7 +10,7 @@ standardizeDS(set, method = "normal")
 \item{set}{\code{ExposomeSet} Exposome Set object}
 
 \item{method}{\code{character} Method of standarization. 
-Options are \code("normal") which scales the exposures using the mean as the center 
+Options are \code{"normal"} which scales the exposures using the mean as the center 
 and the standard variation as dispersion, \code{"robust"} which uses the median and median absolute deviation respectively
 and \code{"interquartile range"} which uses the median as the center and the coeficient between the 
 interquartile range of the exposure and the normal range between the percentile 75 and 25 as variance.}
