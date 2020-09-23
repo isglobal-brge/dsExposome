@@ -2,16 +2,17 @@
 % Please edit documentation in R/exposome_pcaDS.R
 \name{exposome_pcaDS}
 \alias{exposome_pcaDS}
-\title{Title}
+\title{Principal components analysis of an Exposome Set}
 \usage{
-exposome_pcaDS(object, dataset_raw)
+exposome_pcaDS(object)
 }
 \arguments{
-\item{object}{}
+\item{object}{\code{ExposomeSet} Exposome Set object}
 }
 \value{
-
+Returns a \code{ExposomeSet PCA} object
 }
 \description{
-Title
+Performs a non-disclosive PCA given an Exposome Set, the Exposome Set can be subsetted by families to 
+perform the PCA
 }

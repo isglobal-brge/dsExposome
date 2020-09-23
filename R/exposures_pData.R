@@ -12,7 +12,6 @@
 
 exposures_pData <- function(exposomeSet, target = "all") {
 
-    # amb ds.cbind no funcione ¿????¿?¿
   if(target == "all"){
     data <- cbind(rexposome::expos(exposomeSet), Biobase::pData(exposomeSet))
   }

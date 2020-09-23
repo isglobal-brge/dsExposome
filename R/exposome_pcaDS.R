@@ -1,14 +1,16 @@
-#' Title
+#' @title Principal components analysis of an Exposome Set
+#' 
+#' @description Performs a non-disclosive PCA given an Exposome Set, the Exposome Set can be subsetted by families to 
+#' perform the PCA
 #'
-#' @param object 
+#' @param object \code{ExposomeSet} Exposome Set object
 #'
-#' @return
+#' @return Returns a \code{ExposomeSet PCA} object
 #' @export
-#'
-#' @examples
-exposome_pcaDS <- function(object, dataset_raw){
+
+exposome_pcaDS <- function(object){
   
-  x <- dataset_raw
+  dataframe <- exposures_pData(object, "all")
   
   errorMessage <- FALSE
   
@@ -24,8 +26,6 @@ exposome_pcaDS <- function(object, dataset_raw){
   #nfilter.subset <- as.numeric(thr$nfilter.subset)
   #nfilter.string <- as.numeric(thr$nfilter.string)
   #############################################################
-  
-  dataframe <- x
   
   # names of the variables
   cls <- colnames(dataframe)
