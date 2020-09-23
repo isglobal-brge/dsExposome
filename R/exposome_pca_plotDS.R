@@ -25,34 +25,34 @@
 #' @return Depending on the \code{set} argument it returns: \cr
 #' 
 #' -\code{set == "exposures"} \cr
-#' \tab - data: \code{data frame} raw data of the plot geometry \cr
-#' \tab - xlabel: \code{character vector} labels of the x axis \cr
-#' \tab - ylabel: \code{character vector} labels of the y axis \cr
-#' \tab - fams: \code{character vector} name of the families \cr
-#' \tab - labels: \code{character vector} name of the labels for the points (option \code{label} on the
+#'      - data: \code{data frame} raw data of the plot geometry \cr
+#'      - xlabel: \code{character vector} labels of the x axis \cr
+#'      - ylabel: \code{character vector} labels of the y axis \cr
+#'      - fams: \code{character vector} name of the families \cr
+#'      - labels: \code{character vector} name of the labels for the points (option \code{label} on the
 #' client) \cr
 #' 
 #' -\code{set == "samples"} \cr
-#' \tab - data: \code{data frame} raw data of the plot geometry \cr
-#' \tab - xlabel: \code{character vector} labels of the x axis \cr
-#' \tab - ylabel: \code{character vector} labels of the y axis \cr
-#' \tab - pheno: \code{character vector} name of the phenotypes (option \code{phenotype} on the client) \cr
+#'      - data: \code{data frame} raw data of the plot geometry \cr
+#'      - xlabel: \code{character vector} labels of the x axis \cr
+#'      - ylabel: \code{character vector} labels of the y axis \cr
+#'      - pheno: \code{character vector} name of the phenotypes (option \code{phenotype} on the client) \cr
 #' 
 #' -\code{set == "variance"} \cr
-#' \tab - data: \code{data frame} raw data of the plot geometry \cr
-#' \tab - ylabel: \code{character vector} labels of the y axis \cr
+#'      - data: \code{data frame} raw data of the plot geometry \cr
+#'      - ylabel: \code{character vector} labels of the y axis \cr
 #' 
 #' -\code{set == "variance_explained"} \cr
-#' \tab - data: \code{data frame} raw data of the plot geometry \cr
-#' \tab - xline: \code{data frame} raw data of the plot x line geometry \cr
-#' \tab - yline: \code{data frame} raw data of the plot y line geometry \cr
-#' \tab - ylabel: \code{character vector} labels of the y axis \cr
+#'      - data: \code{data frame} raw data of the plot geometry \cr
+#'      - xline: \code{data frame} raw data of the plot x line geometry \cr
+#'      - yline: \code{data frame} raw data of the plot y line geometry \cr
+#'      - ylabel: \code{character vector} labels of the y axis \cr
 #' 
 #' -\code{set == "exposures_correlation"} \cr
-#' \tab - data: \code{data frame} raw data of the plot geometry \cr
+#'      - data: \code{data frame} raw data of the plot geometry \cr
 #' 
 #' -\code{set == "phenotypes_correlation"} \cr
-#' \tab - data: \code{data frame} raw data of the plot geometry \cr
+#'      - data: \code{data frame} raw data of the plot geometry \cr
 #' 
 #' @export
 
