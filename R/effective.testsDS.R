@@ -1,11 +1,10 @@
-#' Title
+#' @title Obtain the threshold for effective tests of an ExposomeSet
 #'
-#' @param set 
+#' @param set \code{ExposomeSet} Exposome Set object
 #'
-#' @return
+#' @return \code{numeric} threshold for effective tests
 #' @export
-#'
-#' @examples
+s
 effective.testsDS <- function(set){
   cormat <- rexposome::extract(rexposome::correlation(set,
                                 use="pairwise.complete.obs", method.cor = "pearson"))
