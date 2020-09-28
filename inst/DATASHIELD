@@ -22,4 +22,5 @@ AggregateMethods:
   familyNamesDS,
   boxPlotGGDS,
   pca.getDS,
-  exposome_pca_plotDS
+  exposome_pca_plotDS,
+  effective.testsDS

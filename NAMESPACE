@@ -3,6 +3,7 @@
 export(boxPlotGGDS)
 export(boxPlotGG_data_TreatmentDS)
 export(boxPlotGG_data_Treatment_numericDS)
+export(effective.testsDS)
 export(exposomeSubsetDS)
 export(exposome_pcaDS)
 export(exposome_pca_plotDS)
