@@ -2,16 +2,16 @@
 % Please edit documentation in R/effective.testsDS.R
 \name{effective.testsDS}
 \alias{effective.testsDS}
-\title{Title}
+\title{Obtain the threshold for effective tests of an ExposomeSet}
 \usage{
 effective.testsDS(set)
 }
 \arguments{
-\item{set}{}
+\item{set}{\code{ExposomeSet} Exposome Set object}
 }
 \value{
-
+\code{numeric} threshold for effective tests
 }
 \description{
-Title
+Obtain the threshold for effective tests of an ExposomeSet
 }
