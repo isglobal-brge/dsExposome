@@ -4,8 +4,6 @@ AssignMethods:
   scaleDS,
   subset_typeDS,
   imputationDS,
-  boxPlotGG_data_TreatmentDS,
-  boxPlotGG_data_Treatment_numericDS,
   plotFamilyDS,
   exposomeSubsetDS,
   plotPCADS,
@@ -15,12 +13,10 @@ AssignMethods:
 AggregateMethods:
   exposureNamesDS,
   phenotypeNamesDS,
-  BoxPlotDS.b,
   tableMissingsDS,
   normalityTestDS,
   shapiro.testDS,
   familyNamesDS,
-  boxPlotGGDS,
   pca.getDS,
   exposome_pca_plotDS,
   effective.testsDS
