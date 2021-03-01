@@ -9,5 +9,6 @@
 #'
 #' @examples
 invExWASDS <- function(object, formula, tef){
-  rexposome::invExWAS(object = object, formula = formula, tef = tef)
+  inv_exwas <- rexposome::invExWAS(object = object, formula = formula, tef = tef)
+  return(inv_exwas)
 }
