@@ -19,4 +19,5 @@ AggregateMethods:
   familyNamesDS,
   pca.getDS,
   exposome_pca_plotDS,
-  effective.testsDS
+  effective.testsDS,
+  invExWASDS
