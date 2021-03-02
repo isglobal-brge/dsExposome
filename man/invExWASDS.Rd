@@ -4,17 +4,19 @@
 \alias{invExWASDS}
 \title{Title}
 \usage{
-invExWASDS(object, formula, tef)
+invExWASDS(object, phenotype, tef, ...)
 }
 \arguments{
-\item{object}{}
+\item{object}{\code{ExposomeSet} Exposome object}
 
-\item{formula}{}
+\item{phenotype}{\code{character} Phenotype objective}
 
-\item{tef}{}
+\item{tef}{\code{bool} If \code{TRUE} computes the threshold for effective tests.}
+
+\item{...}{\code{character vector} Adjusting phenotype covariables}
 }
 \value{
-
+\code{ExWAS} object. With tef, coefficients and pvalues of associations
 }
 \description{
 Title
