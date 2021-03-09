@@ -27,7 +27,7 @@
 loadExposomeDS <- function(exposures, description, phenotype, exposures.idcol = "idcol", phenotypes.idcol = "idcol",
                            description.expCol = "exposure", description.famCol = "family", 
                            exposures.asFactor = 5, warnings = FALSE) {
-  
+
   # Exposures, assign rownames using the exposures.idcol column. Rownames of exposures files correspond to individuals ID
   exposures <- as.data.frame(exposures)
   row.names(exposures) <- unlist(exposures[, exposures.idcol])
@@ -39,14 +39,21 @@ loadExposomeDS <- function(exposures, description, phenotype, exposures.idcol = 
   phenotype <- phenotype[ , !(names(phenotype) %in% phenotypes.idcol)]
   
   # Description, assign rownames using the description.expCol column. Rownames of description files correspond to Exposure names
-  description <- as.data.frame(description)
-  row.names(description) <- unlist(description[, description.expCol])
-  description <- description[ , !(names(description) %in% description.expCol)]
+  # If description file is missing, each exposure will be assigned the family 'family_[exposure]' where [exposure] corresponds to
+  # each exposure name.
+  if(is.null(description)){
+    expos <- colnames(exposures)
+    description <- data.frame(Family = expos)
+    row.names(description) <- expos
+    description.famCol <- "Family"
+  } else{
+    description <- as.data.frame(description)
+    row.names(description) <- unlist(description[, description.expCol])
+    description <- description[ , !(names(description) %in% description.expCol)]
+  }
   
   exposome <- rexposome::loadExposome(exposures, description, phenotype, description.famCol,
                                       exposures.asFactor, warnings)
   return(exposome)
-  
-  
   
 }
