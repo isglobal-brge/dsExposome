@@ -2,6 +2,7 @@
 
 export(effective.testsDS)
 export(exposomeSubsetDS)
+export(exposome_HCPCDS)
 export(exposome_pcaDS)
 export(exposome_pca_plotDS)
 export(exposureNamesDS)

@@ -4,11 +4,13 @@
 #' perform the PCA
 #'
 #' @param object \code{ExposomeSet} Exposome Set object
+#' @param npc \code{numeric} Number of PC to be kept
+#' @param pca \code{bool} If TRUE perform PCA (only numerical variables), if FALSE FAMD (numerical and categorical)
 #'
 #' @return Returns a \code{ExposomeSet PCA} object
 #' @export
 
-exposome_pcaDS <- function(object){
+exposome_pcaDS <- function(object, npc, pca){
   
   dataframe <- exposures_pData(object, "all")
   
@@ -79,7 +81,7 @@ exposome_pcaDS <- function(object){
   }
   
   if(errorMessage == FALSE){
-    pca <- rexposome::pca(object)
+    pca <- rexposome::pca(object = object, npc = npc, pca = pca)
 
     return(pca)
   }

@@ -4,10 +4,14 @@
 \alias{exposome_pcaDS}
 \title{Principal components analysis of an Exposome Set}
 \usage{
-exposome_pcaDS(object)
+exposome_pcaDS(object, npc, pca)
 }
 \arguments{
 \item{object}{\code{ExposomeSet} Exposome Set object}
+
+\item{npc}{\code{numeric} Number of PC to be kept}
+
+\item{pca}{\code{bool} If TRUE perform PCA (only numerical variables), if FALSE FAMD (numerical and categorical)}
 }
 \value{
 Returns a \code{ExposomeSet PCA} object

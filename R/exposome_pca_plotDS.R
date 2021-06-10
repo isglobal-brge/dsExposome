@@ -57,7 +57,6 @@
 #' @export
 
 exposome_pca_plotDS <- function(object, set, phenotype, method, k, noise){
-  
   if(set == "exposures"){
     plot_pca <- rexposome::plotPCA(object, set = set, phenotype = phenotype, show.exposures = TRUE, show.samples = FALSE)
     
