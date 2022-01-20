@@ -14,29 +14,29 @@
 #' @export
 #'
 #' @examples
-addPhenoData2ExposomeSetDS <- function(x, pheno, identifier, alternate_eset_id, complete_cases){
+addPhenoData2ExposomeSetDS <- function(x, pheno, identifier_ExposomeSet, identifier_new_phenotypes, complete_cases){
   
-  if(!(any(identifier %in% colnames(pheno)))){
-    stop("Identifier [", identifier, "] is not on the phenotypes table")
+  if(!(any(identifier_ExposomeSet %in% colnames(pheno)))){
+    stop("Identifier [", identifier_ExposomeSet, "] is not on the phenotypes table")
   }
   
   og_pheno <- x@phenoData@data
   og_pheno_md <- x@phenoData@varMetadata
   
-  new_variables <- colnames(pheno)[!(identifier == colnames(pheno))]
+  new_variables <- colnames(pheno)[!(identifier_ExposomeSet == colnames(pheno))]
   old_variables <- colnames(og_pheno)
   
-  if(is.null(alternate_eset_id)){
+  if(is.null(identifier_new_phenotypes)){
     og_individuals <- rownames(og_pheno)
   } else {
-    og_individuals <- as.character(og_pheno[,alternate_eset_id])
+    og_individuals <- as.character(og_pheno[,identifier_new_phenotypes])
   }
   
-  if(!is.null(alternate_eset_id) & length(unique(og_individuals)) != nrow(og_pheno)){
-    stop('The selectected alternate_eset_id[', alternate_eset_id, '] does not correspond to a unique identifier, there are repeated IDs in this column')
+  if(!is.null(identifier_new_phenotypes) & length(unique(og_individuals)) != nrow(og_pheno)){
+    stop('The selectected identifier_new_phenotypes[', identifier_new_phenotypes, '] does not correspond to a unique identifier, there are repeated IDs in this column')
   }
   
-  new_individuals <- as.character(unlist(pheno[,identifier]))
+  new_individuals <- as.character(unlist(pheno[,identifier_ExposomeSet]))
   common_individuals <- new_individuals %in% og_individuals
   
   if(all(common_individuals == FALSE)){
@@ -44,7 +44,7 @@ addPhenoData2ExposomeSetDS <- function(x, pheno, identifier, alternate_eset_id, 
   }
   
   new_pheno <- pheno[common_individuals,]
-  new_pheno[,identifier] <- as.character(unlist(new_pheno[,identifier]))
+  new_pheno[,identifier_ExposomeSet] <- as.character(unlist(new_pheno[,identifier_ExposomeSet]))
   og_pheno <- cbind(og_pheno, og_individuals_id = og_individuals)
   og_pheno$og_individuals_id <- as.character(og_pheno$og_individuals_id)
   
@@ -55,7 +55,7 @@ addPhenoData2ExposomeSetDS <- function(x, pheno, identifier, alternate_eset_id, 
   }
   
   if(complete_cases == TRUE){
-    new_pheno <- dplyr::right_join(og_pheno, new_pheno, by = c("og_individuals_id" = identifier))
+    new_pheno <- dplyr::right_join(og_pheno, new_pheno, by = c("og_individuals_id" = identifier_ExposomeSet))
     # assay_data <- x@assayData$exp[,colnames(x@assayData$exp) %in% rownames_new_pheno]
     #Biobase::exprs(x)[,colnames(Biobase::exprs(x)) %in% rownames_new_pheno]
   }

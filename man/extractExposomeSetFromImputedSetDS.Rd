@@ -4,12 +4,12 @@
 \alias{extractExposomeSetFromImputedSetDS}
 \title{Title}
 \usage{
-extractExposomeSetFromImputedSetDS(x, imputation)
+extractExposomeSetFromImputedSetDS(x, rid)
 }
 \arguments{
 \item{x}{}
 
-\item{imputation}{}
+\item{rid}{}
 }
 \value{
 
