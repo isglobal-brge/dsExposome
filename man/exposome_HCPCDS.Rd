@@ -2,16 +2,22 @@
 % Please edit documentation in R/exposome_HCPCDS.R
 \name{exposome_HCPCDS}
 \alias{exposome_HCPCDS}
-\title{Title}
+\title{Hierarchical clustering on principal components}
 \usage{
 exposome_HCPCDS(object, nb.clust)
 }
 \arguments{
-\item{object}{}
+\item{object}{\code{ExposomePCA} Object created by the function \link{exposome_pcaDS}}
+
+\item{nb.clust}{\code{numeric} Number of clusters to find. If -1, the tree is automatically 
+cut at the suggested level (see details). If a (positive) integer, the tree is cut with nb.cluters clusters.}
 }
 \value{
-
+Object created by FactoMineR::HCPC with the original dataset removed.
 }
 \description{
-Title
+Hierarchical clustering on principal components
+}
+\details{
+The suggested partition is the one with the higher relative loss of inertia (i(clusters n+1)/i(cluster n)).
 }
