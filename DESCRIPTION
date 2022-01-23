@@ -6,7 +6,7 @@ Date: 2021-06-07
 Authors@R: c(person("Xavier", "Escriba-Montagut", , "xavier.escriba@isglobal.org", role = c("aut", "cre")))
 Description: DataSHIELD server site Exposome functions
 License: MIT + file LICENSE
-Import:
+Depends:
   rexposome,
   Biobase
 Encoding: UTF-8
