@@ -73,7 +73,7 @@ addPhenoData2ExposomeSetDS <- function(x, pheno, identifier_ExposomeSet, identif
     og_pheno_md <- eval(str2expression(paste0("rbind(og_pheno_md, ", i, " = NA)")))
   }
   
-  new_pheno <- new("AnnotatedDataFrame", data=new_pheno, varMetadata=og_pheno_md)
+  new_pheno <- Biobase::AnnotatedDataFrame(data=new_pheno, varMetadata=og_pheno_md)
   
   x@phenoData <- new_pheno
   
