@@ -12,6 +12,9 @@
 #'
 
 exposome_HCPCDS <- function(object, nb.clust){
+  if(!inherits(object, "ExposomePCA")){
+    stop("Object passed to `exposome_HCPCDS` is not of class 'ExposomePCA'")
+  }
   pca <- object@pca
   class(pca) <- "PCA"
   hcpc <- FactoMineR::HCPC(pca, nb.clust, graph = FALSE)

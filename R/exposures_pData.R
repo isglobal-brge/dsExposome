@@ -10,13 +10,18 @@
 #' @return \code{data.frame} With exposures and phenotypes
 #' @export
 
-exposures_pData <- function(exposomeSet, target = "all") {
+exposures_pData <- function(exposomeSet, target = "all", exposures_type = NULL) {
 
   if(target == "all"){
     data <- cbind(rexposome::expos(exposomeSet), Biobase::pData(exposomeSet))
   }
   else if(target == "exposures"){
-    data <- rexposome::expos(exposomeSet)
+    if(!is.null(exposures_type)){
+      select <- rownames(Biobase::fData(exposomeSet))[Biobase::fData(exposomeSet)$`.type` == exposures_type]
+      data <- rexposome::expos(exposomeSet)[ , select]
+    } else {
+      data <- expos(exposomeSet)
+    }
   }
   else if(target == "phenotypes"){
     data <- Biobase::pData(exposomeSet)

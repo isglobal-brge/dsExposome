@@ -6,6 +6,8 @@
 #' @export
 
 effective.testsDS <- function(set){
+  
+  
   cormat <- rexposome::extract(rexposome::correlation(set,
                                 use="pairwise.complete.obs", method.cor = "pearson"))
   M <- ncol(cormat)

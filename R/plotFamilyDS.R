@@ -109,8 +109,7 @@ plotFamilyDS <- function(x, family, group = NA, group2 = NA, scatter = TRUE, na.
     plot <- plot + ggplot2::ylab("Percent")
     plot <- plot + ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 90, hjust = 1))
     plot <- plot + ggplot2::xlab("Exposure")
-    
-    # /
+
     plot
   }
 

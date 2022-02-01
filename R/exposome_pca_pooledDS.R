@@ -1,14 +1,22 @@
 #' Title
 #'
-#' @param tab
-#' @param standar
+#' @param Set 
 #'
 #' @return
 #' @export
 #'
 #' @examples
-
-pcaDS <- function(x = NULL, ...){
+exposome_pca_pooledDS <- function(object){
+  
+  dataframe <- exposures_pData(object, "exposures")
+  
+  # Take only numeric expositions (svd fails otherwise)
+  dataframe <- dataframe[,fData(object)$`.type` == "numeric"]
+  # Take expositions without missings (svd faile otherwise)
+  indexes <- unlist(lapply(dataframe, function(x){
+    !any(is.na(x))
+  }))
+  dataframe <- dataframe[,indexes]
   
   errorMessage <- FALSE
   
@@ -24,8 +32,6 @@ pcaDS <- function(x = NULL, ...){
   #nfilter.subset <- as.numeric(thr$nfilter.subset)
   #nfilter.string <- as.numeric(thr$nfilter.string)
   #############################################################
-  
-  dataframe <- x
   
   # names of the variables
   cls <- colnames(dataframe)
@@ -73,18 +79,65 @@ pcaDS <- function(x = NULL, ...){
   # outputs by replacing their values with NAs
   
   if(is.element('1', Xpar.invalid)==TRUE & varcov.saturation.invalid==0){
-    
     errorMessage <- TRUE
-    
   }
+  # Return block
+  ans <- svdPartial(t(dataframe))
+  # browser()
+  rownames(ans) <- cls
+  # colnames(ans) <- rownames(dataframe)
+  return(ans)
+}
+
+#' Title
+#'
+#' @param x 
+#'
+#' @return
+#'
+#' @examples
+svdPartial <- function(x){
   
-  if(errorMessage == FALSE){
-    pca <- FactoMineR::PCA(x, ...)
-    return(pca)
-  }
-  else{
-    stop("Potentially disclosive, PCA not calculated")
-  }
-  
+  ss <- svd(x)
+
+  ans <- sweep(ss$u, 2, FUN="*", ss$d)
+  return(ans)
   
 }
+
+#' Title
+#'
+#' @param object 
+#' @param pc 
+#'
+#' @return
+#' @export
+#'
+#' @examples
+exposome_pca_pooled_addPCDS <- function(object, pca){
+  
+  # Extract numeric exposures from object
+  select <- rownames(fData(object))[fData(object)$`.type` == "numeric"]
+  exposures <- expos(object)[ , select]
+  
+  # Unserialize PCA object
+  pca <- unserialize(wkb::hex2raw(pca))
+  
+  # Correct individual princ comp values
+  pca$ind$coord <- as.matrix(exposures) %*% pca$svd$V
+  colnames(pca$ind$coord) <- paste0("Dim.", 1:ncol(pca$ind$coord))
+  
+  # Create ExposomePCA object
+  class(pca) <- "list"
+
+  ans <- new("ExposomePCA",
+             assayData = assayDataNew("environment", exp = t(exposures)),
+             featureData = featureData(object)[select, ],
+             phenoData = phenoData(object),
+             pca = pca)
+  return(ans)
+  
+}
+
+
+

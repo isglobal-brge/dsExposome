@@ -82,10 +82,8 @@ exposome_pcaDS <- function(object, npc, pca){
   
   if(errorMessage == FALSE){
     pca <- rexposome::pca(object = object, npc = npc, pca = pca)
-
     return(pca)
-  }
-  else{
+  } else {
     stop("Potentially disclosive, PCA not calculated")
   }
   
