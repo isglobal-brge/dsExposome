@@ -1,11 +1,12 @@
-#' Title
+#' @title Get block SVD
+#' 
+#' @description Calculate block SVD decomposition
 #'
-#' @param Set 
+#' @param Set \code{ExposomeSet}
 #'
-#' @return
+#' @return \code{data.frame} with block results
 #' @export
-#'
-#' @examples
+
 exposome_pca_pooledDS <- function(object){
   
   dataframe <- exposures_pData(object, "exposures")
@@ -89,13 +90,12 @@ exposome_pca_pooledDS <- function(object){
   return(ans)
 }
 
-#' Title
+#' @title Calculate partial SVD
 #'
-#' @param x 
+#' @param x \code{matrix}
 #'
-#' @return
-#'
-#' @examples
+#' @return \code{matrix} with results
+
 svdPartial <- function(x){
   
   ss <- svd(x)
@@ -105,15 +105,16 @@ svdPartial <- function(x){
   
 }
 
-#' Title
+#' @title Add PCA results to ExposomeSet
+#' 
+#' @description Adds the results of the block method to the ExposomeSet, creating a new ExposomePCA.
 #'
-#' @param object 
-#' @param pc 
+#' @param object \code{ExposomeSet} to add the PCA results
+#' @param pca \code{raw} Serialized PCA object
 #'
-#' @return
+#' @return \code{ExposomePCA}
 #' @export
-#'
-#' @examples
+
 exposome_pca_pooled_addPCDS <- function(object, pca){
   
   # Extract numeric exposures from object
@@ -138,6 +139,3 @@ exposome_pca_pooled_addPCDS <- function(object, pca){
   return(ans)
   
 }
-
-
-

@@ -2,18 +2,18 @@
 % Please edit documentation in R/extractExposomeSetFromImputedSetDS.R
 \name{extractExposomeSetFromImputedSetDS}
 \alias{extractExposomeSetFromImputedSetDS}
-\title{Title}
+\title{Extract ExposomeSet from imExposomeSet}
 \usage{
 extractExposomeSetFromImputedSetDS(x, rid)
 }
 \arguments{
-\item{x}{}
+\item{x}{\code{imExposomeSet} to which extract one imputed ExposomeSet.}
 
-\item{rid}{}
+\item{rid}{\code{numeric} Number of imputed set to extract.}
 }
 \value{
-
+\code{ExposomeSet}
 }
 \description{
-Title
+Extract one of the imputed sets of an imputed ExposomeSet (imExposomeSet)
 }

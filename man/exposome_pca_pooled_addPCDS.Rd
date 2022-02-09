@@ -2,18 +2,18 @@
 % Please edit documentation in R/exposome_pca_pooledDS.R
 \name{exposome_pca_pooled_addPCDS}
 \alias{exposome_pca_pooled_addPCDS}
-\title{Title}
+\title{Add PCA results to ExposomeSet}
 \usage{
 exposome_pca_pooled_addPCDS(object, pca)
 }
 \arguments{
-\item{object}{}
+\item{object}{\code{ExposomeSet} to add the PCA results}
 
-\item{pc}{}
+\item{pca}{\code{raw} Serialized PCA object}
 }
 \value{
-
+\code{ExposomePCA}
 }
 \description{
-Title
+Adds the results of the block method to the ExposomeSet, creating a new ExposomePCA.
 }

@@ -2,16 +2,22 @@
 % Please edit documentation in R/exposome_scale_exposuresDS.R
 \name{exposome_scale_exposures_meansDS}
 \alias{exposome_scale_exposures_meansDS}
-\title{Title}
+\title{Get means of the Exposures}
 \usage{
 exposome_scale_exposures_meansDS(Set)
 }
 \arguments{
-\item{Set}{}
+\item{Set}{\code{ExposomeSet}}
 }
 \value{
-
+\code{list} that contains: \cr
+- means \code{numeric vector} of means \cr
+- n \code{numeric vector} of non-NA count
 }
 \description{
-Title
+Calculate the means and number of non-NA values of the exposures 
+of an ExposomeSet.
+}
+\details{
+This function has a disclosure control based on the \code{dsBase::meansDS} function.
 }

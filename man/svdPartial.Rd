@@ -2,16 +2,16 @@
 % Please edit documentation in R/exposome_pca_pooledDS.R
 \name{svdPartial}
 \alias{svdPartial}
-\title{Title}
+\title{Calculate partial SVD}
 \usage{
 svdPartial(x)
 }
 \arguments{
-\item{x}{}
+\item{x}{\code{matrix}}
 }
 \value{
-
+\code{matrix} with results
 }
 \description{
-Title
+Calculate partial SVD
 }

@@ -2,12 +2,12 @@
 % Please edit documentation in R/phenotypeNamesDS.R
 \name{phenotypeNamesDS}
 \alias{phenotypeNamesDS}
-\title{Exposure Phenotypes}
+\title{Exposure Phenotype names}
 \usage{
 phenotypeNamesDS(exposomeSet)
 }
 \arguments{
-\item{exposomeSet}{\code{ExposomeSet} Exposome Set object}
+\item{exposomeSet}{\code{ExposomeSet} ExposomeSet object}
 }
 \value{
 \code{character vector} of the phenotypes names

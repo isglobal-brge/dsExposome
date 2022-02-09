@@ -2,16 +2,16 @@
 % Please edit documentation in R/exposome_pca_pooledDS.R
 \name{exposome_pca_pooledDS}
 \alias{exposome_pca_pooledDS}
-\title{Title}
+\title{Get block SVD}
 \usage{
 exposome_pca_pooledDS(object)
 }
 \arguments{
-\item{Set}{}
+\item{Set}{\code{ExposomeSet}}
 }
 \value{
-
+\code{data.frame} with block results
 }
 \description{
-Title
+Calculate block SVD decomposition
 }

@@ -2,18 +2,21 @@
 % Please edit documentation in R/exposome_scale_exposuresDS.R
 \name{exposome_scale_exposuresDS}
 \alias{exposome_scale_exposuresDS}
-\title{Title}
+\title{Scale ExposomeSet}
 \usage{
-exposome_scale_exposuresDS(Set, means)
+exposome_scale_exposuresDS(Set, means, sds)
 }
 \arguments{
-\item{Set}{}
+\item{Set}{\code{ExposomeSet} to be centered}
 
-\item{means}{}
+\item{means}{\code{numeric vector} that contains the means of each exposure}
+
+\item{sds}{\code{numeric vector} that contains the standard deviations of each exposure}
 }
 \value{
-
+\code{ExpressionSet} with the exposures scaled
 }
 \description{
-Title
+Performs the scaling operation of the exposures centering by mean
+and dividing by the standard deviation.
 }

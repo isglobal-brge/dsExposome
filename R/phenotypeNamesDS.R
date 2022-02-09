@@ -1,8 +1,8 @@
-#' @title Exposure Phenotypes
+#' @title Exposure Phenotype names
 #' 
 #' @description Extract the phenotypes names from a Expression Set object
 #'
-#' @param exposomeSet \code{ExposomeSet} Exposome Set object
+#' @param exposomeSet \code{ExposomeSet} ExposomeSet object
 #'
 #' @return \code{character vector} of the phenotypes names
 #' @export

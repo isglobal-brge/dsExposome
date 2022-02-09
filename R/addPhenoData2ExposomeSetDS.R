@@ -1,19 +1,19 @@
-#' @title Add Phenotype data to ExpressionSet
+#' @title Add Phenotype data to ExposomeSet
+#' 
+#' @description Add phenotype data to an ExpressionSet
 #'
-#' @param x \code{ExpressionSet} ExpressionSet to which add phenotype information
+#' @param x \code{ExposomeSet} ExposomeSet to which add phenotype information
 #' @param pheno \code{data.frame} Table with the new phenotypes
-#' @param identifier \code{character} Name of the ID column on the phenotypes data.frame
+#' @param identifier_ExposomeSet \code{character} Name of the ID column on the already present 
+#' phenotypes data.frame on the ExposomeSet
+#' @param identifier_new_phenotypes \code{character} Name of the ID column on the new phenotypes data.frame
 #' @param complete_cases \code{bool} If \code{TRUE} only the matching individuals 
 #' between the ExpressionSet and the phenotypes table will be included on the resulting ExpressionSet. If 
 #' \code{FALSE} all the individuals on the input ExpressionSet will be on the output ExpressionSet
-#' @param alternate_eset_id \code{character} Alternate ID of the eSet pheno data, by default the rownames 
-#' of the eSet pheno data act as ID, use this argument if the ID to merge the individuals is on a column of the pheno data. 
-#' Input NULL for the standard behaviour of using the rownames of the pheno data as ID.
 #'
-#' @return
+#' @return \code{ExposomeSet} with updated phenotypes information
 #' @export
-#'
-#' @examples
+
 addPhenoData2ExposomeSetDS <- function(x, pheno, identifier_ExposomeSet, identifier_new_phenotypes, complete_cases){
   
   if(!(any(identifier_ExposomeSet %in% colnames(pheno)))){

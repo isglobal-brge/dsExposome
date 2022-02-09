@@ -1,12 +1,16 @@
-#' Title
+#' @title Scale ExposomeSet
+#' 
+#' @description Performs the scaling operation of the exposures centering by mean
+#' and dividing by the standard deviation.
 #'
-#' @param Set 
-#' @param means 
+#' @param Set \code{ExposomeSet} to be centered
+#' @param means \code{numeric vector} that contains the means of each exposure
+#' @param sds \code{numeric vector} that contains the standard deviations of each exposure
 #'
-#' @return
+#' @return \code{ExpressionSet} with the exposures scaled
 #' @export
-#'
-#' @examples
+
+
 exposome_scale_exposuresDS <- function(Set, means, sds){
   
   # Extract numeric exposures from object
@@ -28,14 +32,20 @@ exposome_scale_exposuresDS <- function(Set, means, sds){
 
 }
 
-#' Title
+#' @title Get means of the Exposures
+#' 
+#' @description Calculate the means and number of non-NA values of the exposures 
+#' of an ExposomeSet.
+#' 
+#' @details This function has a disclosure control based on the \code{dsBase::meansDS} function. 
 #'
-#' @param Set 
+#' @param Set \code{ExposomeSet}
 #'
-#' @return
+#' @return \code{list} that contains: \cr
+#' - means \code{numeric vector} of means \cr
+#' - n \code{numeric vector} of non-NA count
 #' @export
-#'
-#' @examples
+
 exposome_scale_exposures_meansDS <- function(Set){
   
   # Extract numeric exposures from object

@@ -2,7 +2,7 @@
 % Please edit documentation in R/addPhenoData2ExposomeSetDS.R
 \name{addPhenoData2ExposomeSetDS}
 \alias{addPhenoData2ExposomeSetDS}
-\title{Add Phenotype data to ExpressionSet}
+\title{Add Phenotype data to ExposomeSet}
 \usage{
 addPhenoData2ExposomeSetDS(
   x,
@@ -13,23 +13,22 @@ addPhenoData2ExposomeSetDS(
 )
 }
 \arguments{
-\item{x}{\code{ExpressionSet} ExpressionSet to which add phenotype information}
+\item{x}{\code{ExposomeSet} ExposomeSet to which add phenotype information}
 
 \item{pheno}{\code{data.frame} Table with the new phenotypes}
+
+\item{identifier_ExposomeSet}{\code{character} Name of the ID column on the already present 
+phenotypes data.frame on the ExposomeSet}
+
+\item{identifier_new_phenotypes}{\code{character} Name of the ID column on the new phenotypes data.frame}
 
 \item{complete_cases}{\code{bool} If \code{TRUE} only the matching individuals 
 between the ExpressionSet and the phenotypes table will be included on the resulting ExpressionSet. If 
 \code{FALSE} all the individuals on the input ExpressionSet will be on the output ExpressionSet}
-
-\item{identifier}{\code{character} Name of the ID column on the phenotypes data.frame}
-
-\item{alternate_eset_id}{\code{character} Alternate ID of the eSet pheno data, by default the rownames 
-of the eSet pheno data act as ID, use this argument if the ID to merge the individuals is on a column of the pheno data. 
-Input NULL for the standard behaviour of using the rownames of the pheno data as ID.}
 }
 \value{
-
+\code{ExposomeSet} with updated phenotypes information
 }
 \description{
-Add Phenotype data to ExpressionSet
+Add phenotype data to an ExpressionSet
 }
