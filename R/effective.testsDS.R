@@ -7,9 +7,11 @@
 
 effective.testsDS <- function(set){
   
-  
   cormat <- rexposome::extract(rexposome::correlation(set,
                                 use="pairwise.complete.obs", method.cor = "pearson"))
+  if(any(is.na(cormat))){
+    stop("Threshold for effective tests not available, use `ds.exwas(tef = FALSE)`")
+  }
   M <- ncol(cormat)
   lambdas <- base::eigen(cormat)$values
   Meff <- M - sum((lambdas>1)*(lambdas-1))
