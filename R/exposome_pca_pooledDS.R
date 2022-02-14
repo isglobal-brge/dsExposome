@@ -118,8 +118,8 @@ svdPartial <- function(x){
 exposome_pca_pooled_addPCDS <- function(object, pca){
   
   # Extract numeric exposures from object
-  select <- rownames(fData(object))[fData(object)$`.type` == "numeric"]
-  exposures <- expos(object)[ , select]
+  select <- rownames(Biobase::fData(object))[Biobase::fData(object)$`.type` == "numeric"]
+  exposures <- rexposome::expos(object)[ , select]
   
   # Unserialize PCA object
   pca <- unserialize(wkb::hex2raw(pca))
@@ -132,9 +132,9 @@ exposome_pca_pooled_addPCDS <- function(object, pca){
   class(pca) <- "list"
 
   ans <- new("ExposomePCA",
-             assayData = assayDataNew("environment", exp = t(exposures)),
-             featureData = featureData(object)[select, ],
-             phenoData = phenoData(object),
+             assayData = Biobase::assayDataNew("environment", exp = t(exposures)),
+             featureData = Biobase::featureData(object)[select, ],
+             phenoData = Biobase::phenoData(object),
              pca = pca)
   return(ans)
   
