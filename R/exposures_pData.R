@@ -20,7 +20,7 @@ exposures_pData <- function(exposomeSet, target = "all", exposures_type = NULL) 
       select <- rownames(Biobase::fData(exposomeSet))[Biobase::fData(exposomeSet)$`.type` == exposures_type]
       data <- rexposome::expos(exposomeSet)[ , select]
     } else {
-      data <- expos(exposomeSet)
+      data <- rexposome::expos(exposomeSet)
     }
   }
   else if(target == "phenotypes"){
