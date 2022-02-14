@@ -15,7 +15,7 @@ exposome_scale_exposuresDS <- function(Set, means, sds){
   
   # Extract numeric exposures from object
   select <- rownames(Biobase::fData(Set))[Biobase::fData(Set)$`.type` == "numeric"]
-  exposures <- expos(Set)[ , select]
+  exposures <- rexposome::expos(Set)[ , select]
   
   lapply(1:ncol(exposures), function(x){
     exposures[,x] - means[x]
@@ -50,7 +50,7 @@ exposome_scale_exposures_meansDS <- function(Set){
   
   # Extract numeric exposures from object
   select <- rownames(Biobase::fData(Set))[Biobase::fData(Set)$`.type` == "numeric"]
-  exposures <- expos(Set)[ , select]
+  exposures <- rexposome::expos(Set)[ , select]
   
   # Disclosure control adapted from dsBase::meansDS (v6.2)
   #############################################################
