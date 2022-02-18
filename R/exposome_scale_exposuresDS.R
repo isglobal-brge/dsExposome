@@ -24,7 +24,7 @@ exposome_scale_exposuresDS <- function(Set, means, sds){
   exp_minus_mean <- sweep(exposures, 2, FUN = "-", means)
   exp_minus_mean_div_sd <- sweep(exp_minus_mean, 2, FUN = "/", sds)
   
-  ans <- new("ExposomeSet",
+  ans <- methods::new("ExposomeSet",
              assayData = Biobase::assayDataNew("environment", exp = t(exp_minus_mean_div_sd)),
              featureData = Biobase::featureData(Set)[select, ],
              phenoData = Biobase::phenoData(Set))

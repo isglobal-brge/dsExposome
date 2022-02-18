@@ -1,5 +1,5 @@
 #' @title Hierarchical clustering on principal components
-#' @subtitle Perform a HCPC on the PCA/FAMD of an ExposomeSet
+#' @description Perform a HCPC on the PCA/FAMD of an ExposomeSet
 #' 
 #' @details The suggested partition is the one with the higher relative loss of inertia (i(clusters n+1)/i(cluster n)).
 #'

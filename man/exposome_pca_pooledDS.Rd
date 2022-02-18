@@ -7,7 +7,7 @@
 exposome_pca_pooledDS(object)
 }
 \arguments{
-\item{Set}{\code{ExposomeSet}}
+\item{object}{\code{ExposomeSet}}
 }
 \value{
 \code{data.frame} with block results

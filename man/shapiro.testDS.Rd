@@ -13,5 +13,5 @@ shapiro.testDS(x)
 Results of the Shapiro-Wilk Normality Test
 }
 \description{
-Shapiro-Wilk Normality Test
+Perform the Shapiro-Wilk Normality Test on a numeric vector (or column of a data frame)
 }

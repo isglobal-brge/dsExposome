@@ -87,7 +87,8 @@ exposome_pca_plotDS <- function(object, set, phenotype, method, k, noise){
     ))
   }
   else if(set == "variance"){
-    plot_pca <- rexposome:::.plot_explained(object, 1, 2)
+    .plot_explained<-utils::getFromNamespace(".plot_explained", "rexposome")
+    plot_pca <- .plot_explained(object, 1, 2)
     
     plot_pca <- ggplot2::ggplot_build(plot_pca)
     
@@ -96,7 +97,8 @@ exposome_pca_plotDS <- function(object, set, phenotype, method, k, noise){
                 ))
   }
   else if(set == "variance_explained"){
-    plot_pca <- rexposome:::.plot_acum (object, 1, 2)
+    .plot_acum<-utils::getFromNamespace(".plot_acum", "rexposome")
+    plot_pca <- .plot_acum (object, 1, 2)
     
     plot_pca <- ggplot2::ggplot_build(plot_pca)
     

@@ -11,6 +11,9 @@ exposures_pData(exposomeSet, target = "all", exposures_type = NULL)
 
 \item{target}{\code{character} To specify target of output table, \code{all} to include exposures and phenotypes,
 \code{exposures} to include only the exposures and \code{phenotypes} to include only the phenotypes. Default \code{all}}
+
+\item{exposures_type}{\code{character} Type of the exposures to be kept, usually 
+\code{"numeric"} or \code{"character"/"factor"}. If \code{NULL} all the exposures will be kept.}
 }
 \value{
 \code{data.frame} With exposures and phenotypes

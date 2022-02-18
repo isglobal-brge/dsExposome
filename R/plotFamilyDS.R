@@ -70,7 +70,7 @@ plotFamilyDS <- function(x, family, group = NA, group2 = NA, scatter = TRUE, na.
         return("mix")
       }
     } else {
-      dd <- rexposome:::expos(object)[ , exposures, drop = FALSE]
+      dd <- rexposome::expos(object)[ , exposures, drop = FALSE]
       colnames(dd) <- exposures
       rownames(dd) <- colnames(Biobase::assayData(object)[["exp"]])
       type <- Biobase::fData(object)[exposures, ".type"]

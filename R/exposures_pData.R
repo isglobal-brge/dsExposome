@@ -6,6 +6,8 @@
 #' @param exposomeSet  \code{ExposomeSet} Exposome Set object
 #' @param target \code{character} To specify target of output table, \code{all} to include exposures and phenotypes,
 #' \code{exposures} to include only the exposures and \code{phenotypes} to include only the phenotypes. Default \code{all}
+#' @param exposures_type \code{character} Type of the exposures to be kept, usually 
+#' \code{"numeric"} or \code{"character"/"factor"}. If \code{NULL} all the exposures will be kept.
 #'
 #' @return \code{data.frame} With exposures and phenotypes
 #' @export

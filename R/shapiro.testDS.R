@@ -1,6 +1,6 @@
 #' @title Shapiro-Wilk Normality Test
 #' 
-#' @escription Perform the Shapiro-Wilk Normality Test on a numeric vector (or column of a data frame)
+#' @description Perform the Shapiro-Wilk Normality Test on a numeric vector (or column of a data frame)
 #'
 #' @param x \code{numeric} Name of the numeric vector 
 #'

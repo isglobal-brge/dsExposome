@@ -2,7 +2,7 @@
 #' 
 #' @description Calculate block SVD decomposition
 #'
-#' @param Set \code{ExposomeSet}
+#' @param object \code{ExposomeSet}
 #'
 #' @return \code{data.frame} with block results
 #' @export
@@ -12,7 +12,7 @@ exposome_pca_pooledDS <- function(object){
   dataframe <- exposures_pData(object, "exposures")
   
   # Take only numeric expositions (svd fails otherwise)
-  dataframe <- dataframe[,fData(object)$`.type` == "numeric"]
+  dataframe <- dataframe[,Biobase::fData(object)$`.type` == "numeric"]
   # Take expositions without missings (svd faile otherwise)
   indexes <- unlist(lapply(dataframe, function(x){
     !any(is.na(x))
@@ -131,7 +131,7 @@ exposome_pca_pooled_addPCDS <- function(object, pca){
   # Create ExposomePCA object
   class(pca) <- "list"
 
-  ans <- new("ExposomePCA",
+  ans <- methods::new("ExposomePCA",
              assayData = Biobase::assayDataNew("environment", exp = t(exposures)),
              featureData = Biobase::featureData(object)[select, ],
              phenoData = Biobase::phenoData(object),
