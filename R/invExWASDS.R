@@ -13,5 +13,5 @@ invExWASDS <- function(object, phenotype, tef, ...){
   formula <- paste0("~ ", phenotype, if(is.null(covariables)){}else{paste(" +",paste0(covariables, collapse = " + "))})
   formula <- stats::as.formula(formula)
   inv_exwas <- rexposome::invExWAS(object = object, formula = formula, tef = tef)
-  return(inv_exwas)
+  return(list(comparison = inv_exwas@comparison, effective = inv_exwas@effective))
 }

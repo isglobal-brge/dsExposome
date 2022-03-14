@@ -1,4 +1,4 @@
-# dsExposome (development version)
++ Changed output of `invExWASDS` function to return a list of tables instead of an `ExposomeSet` object.
 
 # dsExposome 2.0.1
 
