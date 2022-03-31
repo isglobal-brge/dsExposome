@@ -20,6 +20,7 @@ AggregateMethods:
   tableMissingsDS,
   normalityTestDS,
   shapiro.testDS,
+  anderson.darling.testDS,
   familyNamesDS,
   pca.getDS,
   exposome_pca_plotDS,
