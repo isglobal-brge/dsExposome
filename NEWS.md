@@ -1,4 +1,4 @@
-# dsExposome (development version)
++ Added Anderson-Darling normality testing `anderson.darling.testDS` to perform normality testing on samples with over 5000 individuals.
 
 # dsExposome 2.0.2
 
