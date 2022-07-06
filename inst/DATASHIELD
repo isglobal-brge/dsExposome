@@ -13,6 +13,7 @@ AssignMethods:
   addPhenoData2ExposomeSetDS,
   extractExposomeSetFromImputedSetDS,
   exposome_pca_pooled_addPCDS,
+  maturityoffsetDS,
   exposome_scale_exposuresDS
 AggregateMethods:
   exposureNamesDS,
