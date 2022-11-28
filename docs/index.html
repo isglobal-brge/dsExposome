@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">dsExposome</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.6</span>
       </span>
     </div>
 
@@ -59,47 +59,38 @@
       </header><div class="row">
   <div class="contents col-md-9">
 
-<div class="section level1">
-<div class="page-header"><h1 id="dsexposome">dsExposome<a class="anchor" aria-label="anchor" href="#dsexposome"></a>
-</h1></div>
-</div>
+<div class="section level1"><div class="page-header"><h1 id="dsexposome">dsExposome<a class="anchor" aria-label="anchor" href="#dsexposome"></a>
+</h1></div></div>
 <div class="section level1">
 <h1 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h1>
 <p>Exposome functions (server side) for DataSHIELD. These are server side functions for exposome analysis of private data.</p>
-<ul>
-<li>
+<ul><li>
 <p>The server side package is called dsExposomeClient:</p>
-<ul>
-<li><a href="https://github.com/isglobal-brge/dsExposomeClient" class="external-link uri">https://github.com/isglobal-brge/dsExposomeClient</a></li>
-</ul>
-</li>
-</ul>
+<ul><li><a href="https://github.com/isglobal-brge/dsExposomeClient" class="external-link uri">https://github.com/isglobal-brge/dsExposomeClient</a></li></ul>
+</li></ul>
 </div>
 <div class="section level1">
 <h1 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h1>
-<pre><code><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'devtools'</span><span class="op">)</span>
-
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/" class="external-link">devtools</a></span><span class="op">)</span>
-
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">'isglobal-brge/dsExposome'</span><span class="op">)</span></code></pre>
+<pre><code><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'devtools'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/" class="external-link">devtools</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">'isglobal-brge/dsExposome'</span><span class="op">)</span></span></code></pre>
 <p>If you want to use a certain release then you can do the following</p>
-<pre><code><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/" class="external-link">devtools</a></span><span class="op">)</span>
-
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">'isglobal-brge/dsExposome@v1.0.5'</span><span class="op">)</span></code></pre>
+<pre><code><span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/" class="external-link">devtools</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">'isglobal-brge/dsExposome@v1.0.5'</span><span class="op">)</span></span></code></pre>
 <ul>
 <li>
 <p>Install R Studio and the development environment as described below:</p>
-<ul>
-<li><a href="https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/12943461/Getting+started" class="external-link uri">https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/12943461/Getting+started</a></li>
-</ul>
+<ul><li><a href="https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/12943461/Getting+started" class="external-link uri">https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/12943461/Getting+started</a></li></ul>
 </li>
 <li>
 <p>Then install the virtual machines as described below:</p>
-<ul>
-<li><a href="https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/931069953/Installation+Training+Hub-+DataSHIELD+v6" class="external-link uri">https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/931069953/Installation+Training+Hub-+DataSHIELD+v6</a></li>
-</ul>
+<ul><li><a href="https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/931069953/Installation+Training+Hub-+DataSHIELD+v6" class="external-link uri">https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/931069953/Installation+Training+Hub-+DataSHIELD+v6</a></li></ul>
 </li>
 </ul>
 </div>
@@ -124,9 +115,7 @@
 <li><p><a href="mailto:juanr.gonzalez@isglobal.org" class="email">juanr.gonzalez@isglobal.org</a></p></li>
 <li>
 <p>DataSHIELD</p>
-<ul>
-<li><a href="https://www.datashield.ac.uk" class="external-link uri">https://www.datashield.ac.uk</a></li>
-</ul>
+<ul><li><a href="https://www.datashield.ac.uk" class="external-link uri">https://www.datashield.ac.uk</a></li></ul>
 </li>
 </ul>
 </div>
@@ -171,7 +160,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>

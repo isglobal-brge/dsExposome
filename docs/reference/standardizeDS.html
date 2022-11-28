@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dsExposome</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.6</span>
       </span>
     </div>
 
@@ -47,23 +47,28 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">standardizeDS</span><span class="op">(</span><span class="va">set</span>, method <span class="op">=</span> <span class="st">"normal"</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">standardizeDS</span><span class="op">(</span><span class="va">set</span>, method <span class="op">=</span> <span class="st">"normal"</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>set</dt>
 <dd><p><code>ExposomeSet</code> Exposome Set object</p></dd>
+
+
 <dt>method</dt>
 <dd><p><code>character</code> Method of standarization. 
 Options are <code>"normal"</code> which scales the exposures using the mean as the center 
 and the standard variation as dispersion, <code>"robust"</code> which uses the median and median absolute deviation respectively
 and <code>"interquartile range"</code> which uses the median as the center and the coeficient between the 
 interquartile range of the exposure and the normal range between the percentile 75 and 25 as variance.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Returns a standardized ExposomeSet</p>
+    
+
+<p>Returns a standardized ExposomeSet</p>
     </div>
 
   </div>
@@ -78,7 +83,7 @@ interquartile range of the exposure and the normal range between the percentile 
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

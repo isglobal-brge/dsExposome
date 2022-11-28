@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dsExposome</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.6</span>
       </span>
     </div>
 
@@ -47,25 +47,45 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">normalityTestDS</span><span class="op">(</span><span class="va">object</span>, th <span class="op">=</span> <span class="fl">0.05</span>, min.val <span class="op">=</span> <span class="fl">5</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span>, warnings <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">normalityTestDS</span><span class="op">(</span><span class="va">object</span>, th <span class="op">=</span> <span class="fl">0.05</span>, min.val <span class="op">=</span> <span class="fl">5</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span>, warnings <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>object</dt>
 <dd><p><code>ExposomeSet</code> Exposome Set object</p></dd>
+
+
 <dt>th</dt>
 <dd><p><code>numeric</code> (default <code>0.05</code>) Threshold to considere an exposure to follow a normal distribution.</p></dd>
+
+
 <dt>min.val</dt>
 <dd><p><code>numeric</code> (default <code>5</code>) Minimum number of values not missings to test the exposures.</p></dd>
+
+
 <dt>na.rm</dt>
 <dd><p><code>bool</code> (default <code>TRUE</code>) Removes the NA values to test the normality on the exposure.</p></dd>
+
+
 <dt>warnings</dt>
 <dd><p><code>bool</code> (default <code>TRUE</code>) Show warnings if required.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>list of <code>data.frame</code> (one for each study server) with <br>- exposure: <code>character</code> Name of the exposures <br>- normality: <code>bool</code> If exposure is normal (<code>TRUE</code>) or not (<code>FALSE</code>) <br>- p.value: <code>numeric</code> P-value of the Shapiro-Wilk Normality Test</p>
+    
+
+<p>list of <code>data.frame</code> (one for each study server) with <br></p>
+
+
+<p>- exposure: <code>character</code> Name of the exposures <br></p>
+
+
+<p>- normality: <code>bool</code> If exposure is normal (<code>TRUE</code>) or not (<code>FALSE</code>) <br></p>
+
+
+<p>- p.value: <code>numeric</code> P-value of the Shapiro-Wilk Normality Test</p>
     </div>
 
   </div>
@@ -80,7 +100,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

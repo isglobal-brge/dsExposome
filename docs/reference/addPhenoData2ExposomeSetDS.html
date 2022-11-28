@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dsExposome</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.6</span>
       </span>
     </div>
 
@@ -47,34 +47,45 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">addPhenoData2ExposomeSetDS</span><span class="op">(</span>
-  <span class="va">x</span>,
-  <span class="va">pheno</span>,
-  <span class="va">identifier_ExposomeSet</span>,
-  <span class="va">identifier_new_phenotypes</span>,
-  <span class="va">complete_cases</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">addPhenoData2ExposomeSetDS</span><span class="op">(</span></span>
+<span>  <span class="va">x</span>,</span>
+<span>  <span class="va">pheno</span>,</span>
+<span>  <span class="va">identifier_ExposomeSet</span>,</span>
+<span>  <span class="va">identifier_new_phenotypes</span>,</span>
+<span>  <span class="va">complete_cases</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>x</dt>
 <dd><p><code>ExposomeSet</code> ExposomeSet to which add phenotype information</p></dd>
+
+
 <dt>pheno</dt>
 <dd><p><code>data.frame</code> Table with the new phenotypes</p></dd>
+
+
 <dt>identifier_ExposomeSet</dt>
 <dd><p><code>character</code> Name of the ID column on the already present 
 phenotypes data.frame on the ExposomeSet</p></dd>
+
+
 <dt>identifier_new_phenotypes</dt>
 <dd><p><code>character</code> Name of the ID column on the new phenotypes data.frame</p></dd>
+
+
 <dt>complete_cases</dt>
 <dd><p><code>bool</code> If <code>TRUE</code> only the matching individuals 
 between the ExpressionSet and the phenotypes table will be included on the resulting ExpressionSet. If 
 <code>FALSE</code> all the individuals on the input ExpressionSet will be on the output ExpressionSet</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p><code>ExposomeSet</code> with updated phenotypes information</p>
+    
+
+<p><code>ExposomeSet</code> with updated phenotypes information</p>
     </div>
 
   </div>
@@ -89,7 +100,7 @@ between the ExpressionSet and the phenotypes table will be included on the resul
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

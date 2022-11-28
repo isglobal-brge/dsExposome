@@ -1,3 +1,5 @@
+# dsExposome 2.0.6
+
 # dsExposome 2.0.4
 
 # dsExposome 2.0.3

@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dsExposome</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.6</span>
       </span>
     </div>
 
@@ -47,21 +47,28 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">tableMissingsDS</span><span class="op">(</span><span class="va">exp</span>, set <span class="op">=</span> <span class="st">"exposures"</span>, output <span class="op">=</span> <span class="st">"n"</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">tableMissingsDS</span><span class="op">(</span><span class="va">exp</span>, set <span class="op">=</span> <span class="st">"exposures"</span>, output <span class="op">=</span> <span class="st">"n"</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>exp</dt>
 <dd><p><code>ExposomeSet</code> Exposome Set object</p></dd>
+
+
 <dt>set</dt>
 <dd><p><code>character</code> (default <code>"exposures"</code>) Set to get the missings: <code>"exposures"</code> or <code>"phenotypes"</code></p></dd>
+
+
 <dt>output</dt>
 <dd><p><code>character</code> (default <code>"n"</code>) Get missing number (<code>"n"</code>) or percentage (<code>"p"</code>)</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Vector of named numerics, where the name corresponds to the variable and the associated numeric corresponds
+    
+
+<p>Vector of named numerics, where the name corresponds to the variable and the associated numeric corresponds
 to the missing (number or percentage, dependeing on the <code>output</code> parameter)</p>
     </div>
 
@@ -77,7 +84,7 @@ to the missing (number or percentage, dependeing on the <code>output</code> para
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>
