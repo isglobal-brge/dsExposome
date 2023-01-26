@@ -10,6 +10,10 @@ This allows us to create new exposure data to be analyzed as an ExposomeSet obje
 
 Preliminary version, testing to be performed soon as well as throughout documentation in a vignette or bookdown on `dsExposomeClient` repo
 
+# dsExposome 2.0.6
+
+# dsExposome 2.0.4
+
 # dsExposome 2.0.3
 
 + Added Anderson-Darling normality testing `anderson.darling.testDS` to perform normality testing on samples with over 5000 individuals.

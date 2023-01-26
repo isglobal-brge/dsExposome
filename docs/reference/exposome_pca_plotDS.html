@@ -18,7 +18,7 @@ render a non-disclosive plot of the PCA of an ExposomeSet"><!-- mathjax --><scri
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dsExposome</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.6</span>
       </span>
     </div>
 
@@ -49,13 +49,15 @@ render a non-disclosive plot of the PCA of an ExposomeSet</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">exposome_pca_plotDS</span><span class="op">(</span><span class="va">object</span>, <span class="va">set</span>, <span class="va">phenotype</span>, <span class="va">method</span>, <span class="va">k</span>, <span class="va">noise</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">exposome_pca_plotDS</span><span class="op">(</span><span class="va">object</span>, <span class="va">set</span>, <span class="va">phenotype</span>, <span class="va">method</span>, <span class="va">k</span>, <span class="va">noise</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>object</dt>
 <dd><p><code>ExposomeSet PCA</code> Exposome Set PCA object</p></dd>
+
+
 <dt>set</dt>
 <dd><p><code>character</code> Argument to specify the type of plot to compute. Options: <br></p>
 <p>-<code>"exposures"</code>: Plot of the exposures space on the first two principal components, color coded by family. <br>
@@ -65,22 +67,122 @@ render a non-disclosive plot of the PCA of an ExposomeSet</p>
 -<code>"variance_explained"</code>: Plot of the accumulated variance explained by each principal component. <br>
 -<code>"exposures_correlation"</code>: Correlation between principal components and exposures <br>
 -<code>"phenotypes_correlation"</code>: Association between principal components and phenotypes <br></p></dd>
+
+
 <dt>phenotype</dt>
 <dd><p><code>character</code> Phenotype to color code the <code>"exposures"</code> plot.</p></dd>
+
+
 <dt>method</dt>
 <dd><p><code>numeric</code> (1) deterministic method to anonimize the scatter plot (uses <code>k</code>). 
 (2) probabilistic method to anonimize the scatter plot (uses <code>noise</code>).</p></dd>
+
+
 <dt>k</dt>
 <dd><p><code>numeric</code> The number of the nearest neighbors for which their centroid is calculated,
 applied for <code>method = 1</code></p></dd>
+
+
 <dt>noise</dt>
 <dd><p><code>numeric</code> The percentage of the initial variance that is used as the variance
 of the embedded noise.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Depending on the <code>set</code> argument it returns: <br>-<code>set == "exposures"</code><br>     - data: <code>data frame</code> raw data of the plot geometry <br>     - xlabel: <code>character vector</code> labels of the x axis <br>     - ylabel: <code>character vector</code> labels of the y axis <br>     - fams: <code>character vector</code> name of the families <br>     - labels: <code>character vector</code> name of the labels for the points (option <code>label</code> on the
-client) <br>-<code>set == "samples"</code><br>     - data: <code>data frame</code> raw data of the plot geometry <br>     - xlabel: <code>character vector</code> labels of the x axis <br>     - ylabel: <code>character vector</code> labels of the y axis <br>     - pheno: <code>character vector</code> name of the phenotypes (option <code>phenotype</code> on the client) <br>-<code>set == "variance"</code><br>     - data: <code>data frame</code> raw data of the plot geometry <br>     - ylabel: <code>character vector</code> labels of the y axis <br>-<code>set == "variance_explained"</code><br>     - data: <code>data frame</code> raw data of the plot geometry <br>     - xline: <code>data frame</code> raw data of the plot x line geometry <br>     - yline: <code>data frame</code> raw data of the plot y line geometry <br>     - ylabel: <code>character vector</code> labels of the y axis <br>-<code>set == "exposures_correlation"</code><br>     - data: <code>data frame</code> raw data of the plot geometry <br>-<code>set == "phenotypes_correlation"</code><br>     - data: <code>data frame</code> raw data of the plot geometry <br></p>
+    
+
+<p>Depending on the <code>set</code> argument it returns: <br></p>
+
+
+
+<p>-<code>set == "exposures"</code></p>
+<p></p>
+<p><br></p>
+
+
+<p>- data: <code>data frame</code> raw data of the plot geometry <br></p>
+
+
+<p>- xlabel: <code>character vector</code> labels of the x axis <br></p>
+
+
+<p>- ylabel: <code>character vector</code> labels of the y axis <br></p>
+
+
+<p>- fams: <code>character vector</code> name of the families <br></p>
+
+
+<p>- labels: <code>character vector</code> name of the labels for the points (option <code>label</code> on the
+client) <br></p>
+
+
+
+<p>-<code>set == "samples"</code></p>
+<p></p>
+<p><br></p>
+
+
+<p>- data: <code>data frame</code> raw data of the plot geometry <br></p>
+
+
+<p>- xlabel: <code>character vector</code> labels of the x axis <br></p>
+
+
+<p>- ylabel: <code>character vector</code> labels of the y axis <br></p>
+
+
+<p>- pheno: <code>character vector</code> name of the phenotypes (option <code>phenotype</code> on the client) <br></p>
+
+
+
+<p>-<code>set == "variance"</code></p>
+<p></p>
+<p><br></p>
+
+
+<p>- data: <code>data frame</code> raw data of the plot geometry <br></p>
+
+
+<p>- ylabel: <code>character vector</code> labels of the y axis <br></p>
+
+
+
+<p>-<code>set == "variance_explained"</code></p>
+<p></p>
+<p><br></p>
+
+
+<p>- data: <code>data frame</code> raw data of the plot geometry <br></p>
+
+
+<p>- xline: <code>data frame</code> raw data of the plot x line geometry <br></p>
+
+
+<p>- yline: <code>data frame</code> raw data of the plot y line geometry <br></p>
+
+
+<p>- ylabel: <code>character vector</code> labels of the y axis <br></p>
+
+
+
+<p>-<code>set == "exposures_correlation"</code></p>
+<p></p>
+<p><br></p>
+
+
+<p>- data: <code>data frame</code> raw data of the plot geometry <br></p>
+
+
+
+<p>-<code>set == "phenotypes_correlation"</code></p>
+<p></p>
+<p><br></p>
+
+
+<p>- data: <code>data frame</code> raw data of the plot geometry <br></p>
+
+
     </div>
 
   </div>
@@ -95,7 +197,7 @@ client) <br>-<code>set == "samples"</code><br>     - data: <code>data frame</cod
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

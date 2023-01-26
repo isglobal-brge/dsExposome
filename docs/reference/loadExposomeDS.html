@@ -18,7 +18,7 @@ on the study server"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/a
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dsExposome</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.6</span>
       </span>
     </div>
 
@@ -49,51 +49,70 @@ on the study server</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">loadExposomeDS</span><span class="op">(</span>
-  <span class="va">exposures</span>,
-  <span class="va">description</span>,
-  <span class="va">phenotype</span>,
-  exposures.idcol <span class="op">=</span> <span class="st">"idcol"</span>,
-  phenotypes.idcol <span class="op">=</span> <span class="st">"idcol"</span>,
-  description.expCol <span class="op">=</span> <span class="st">"exposure"</span>,
-  description.famCol <span class="op">=</span> <span class="st">"family"</span>,
-  exposures.asFactor <span class="op">=</span> <span class="fl">5</span>,
-  warnings <span class="op">=</span> <span class="cn">FALSE</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">loadExposomeDS</span><span class="op">(</span></span>
+<span>  <span class="va">exposures</span>,</span>
+<span>  <span class="va">description</span>,</span>
+<span>  <span class="va">phenotype</span>,</span>
+<span>  exposures.idcol <span class="op">=</span> <span class="st">"idcol"</span>,</span>
+<span>  phenotypes.idcol <span class="op">=</span> <span class="st">"idcol"</span>,</span>
+<span>  description.expCol <span class="op">=</span> <span class="st">"exposure"</span>,</span>
+<span>  description.famCol <span class="op">=</span> <span class="st">"family"</span>,</span>
+<span>  exposures.asFactor <span class="op">=</span> <span class="fl">5</span>,</span>
+<span>  warnings <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>exposures</dt>
 <dd><p><code>data.frame</code> With the exposures of the exposome</p></dd>
+
+
 <dt>description</dt>
 <dd><p><code>data.frame</code> With the description of the exposome</p></dd>
+
+
 <dt>phenotype</dt>
 <dd><p><code>data.frame</code> With the phenotype of the exposome</p></dd>
+
+
 <dt>exposures.idcol</dt>
 <dd><p><code>character</code> (default <code>"idcol"</code>) Name of the column in the Exposures file
 that contains the individuals ID</p></dd>
+
+
 <dt>phenotypes.idcol</dt>
 <dd><p><code>character</code> (default <code>"idcol"</code>) Name of the column in the Phenotypes file
 that contains the individuals ID</p></dd>
+
+
 <dt>description.expCol</dt>
 <dd><p><code>character</code> (default <code>"exposure"</code>) Name of the column in the Description file
 that contains the Exposure names</p></dd>
+
+
 <dt>description.famCol</dt>
 <dd><p>(default <code>"family"</code>) Index where the family's
 name (per exposures) if found in file "description". It can be both numeric
 or character.</p></dd>
+
+
 <dt>exposures.asFactor</dt>
 <dd><p><code>numeric</code> (default <code>5</code>) The exposures with more
 than this number of unique items will be considered as "continuous" while
 the exposures with less or equal number of items will be considered as
 "factor".</p></dd>
+
+
 <dt>warnings</dt>
 <dd><p><code>bool</code> (default <code>FALSE</code>) If <code>TRUE</code> shows useful</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>An <code>ExposomeSet</code> object</p>
+    
+
+<p>An <code>ExposomeSet</code> object</p>
     </div>
 
   </div>
@@ -108,7 +127,7 @@ the exposures with less or equal number of items will be considered as
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>
