@@ -2,15 +2,19 @@
 % Please edit documentation in R/NetCDF_fillvalue_matrixDS.R
 \name{NetCDF_fillvalue_matrixDS}
 \alias{NetCDF_fillvalue_matrixDS}
-\title{Title}
+\title{Set NAs to matrix fillvalues}
 \usage{
 NetCDF_fillvalue_matrixDS(mat, fillvalue)
 }
 \arguments{
-\item{nc}{}
+\item{mat}{`matrix` Extracted from a `NetCDF` resource using `nc_dataDS`}
 
-\item{varid}{}
+\item{fillvalue}{`list` Extracted from the `_FillValue` slot of a `NetCDF`
+resource using `ncatt_getDS`}
+}
+\value{
+`matrix`
 }
 \description{
-Title
+Use a fillvalue extracted using `ncatt_get` and place NAs
 }

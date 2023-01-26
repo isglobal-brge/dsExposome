@@ -2,15 +2,21 @@
 % Please edit documentation in R/ncatt_getDS.R
 \name{ncatt_getDS}
 \alias{ncatt_getDS}
-\title{Title}
+\title{Get attribute from netCDF file}
 \usage{
 ncatt_getDS(nc, varid, attname)
 }
 \arguments{
-\item{nc}{}
+\item{nc}{An object of class ncdf4 (loaded from a NetCDF resource), 
+indicating what file to read from.}
 
-\item{varid}{}
+\item{varid}{The variable whose attribute is to be read.}
+
+\item{attname}{Name of the attribute to read}
+}
+\value{
+`list`
 }
 \description{
-Title
+Reads an attribute from a netCDF file.
 }

@@ -2,15 +2,19 @@
 % Please edit documentation in R/ncvar_getDS.R
 \name{ncvar_getDS}
 \alias{ncvar_getDS}
-\title{Title}
+\title{Read data from netCDF file}
 \usage{
 ncvar_getDS(nc, varid)
 }
 \arguments{
-\item{nc}{}
+\item{nc}{An object of class ncdf4 (loaded from a NetCDF resource), 
+indicating what file to read from.}
 
-\item{varid}{}
+\item{varid}{What variable to read the data from.}
+}
+\value{
+`vector`
 }
 \description{
-Title
+Reads data from an existing netCDF file.
 }
