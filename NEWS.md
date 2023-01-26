@@ -1,5 +1,15 @@
 # dsExposome (development version)
 
+Added a new resource resolver to
+
++ load NetCDF data
++ extract the exposure and spatial information
++ relate this information with clinical location of individuals
+
+This allows us to create new exposure data to be analyzed as an ExposomeSet object with the already present `dsExposome` functions.
+
+Preliminary version, testing to be performed soon as well as throughout documentation in a vignette or bookdown on `dsExposomeClient` repo
+
 # dsExposome 2.0.3
 
 + Added Anderson-Darling normality testing `anderson.darling.testDS` to perform normality testing on samples with over 5000 individuals.
