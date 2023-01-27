@@ -1,25 +1,28 @@
 Package: dsExposome
 Type: Package
 Title: DataSHIELD server site Exposome functions
-Version: 2.0.6
-Date: 2022-11-23
+Version: 2.0.6.9000
+Date: 2022-03-04
+
 Authors@R: c(person("Xavier", "Escriba-Montagut", , "xavier.escriba@isglobal.org", role = c("aut", "cre")))
 Description: Collection of functions to perform non-disclosive Exposome data analysis with DataSHIELD and Bioconductor.
 License: MIT + file LICENSE
 Depends: R (>= 4.0.0),
+  resourcer (>= 1.1.1)
 Imports:
-     dsBase (>= 6.1.1),
-     rexposome,
-     Biobase,
-     FactoMineR,
-     dplyr,
-     ggplot2,
-     reshape2,
-     scales,
-     stringr,
-     wkb,
-     methods,
-     nortest
+    dsBase (>= 6.1.1),
+    rexposome (>= 1.20.1),
+    Biobase,
+    FactoMineR,
+    dplyr,
+    ggplot2,
+    reshape2,
+    scales,
+    stringr,
+    wkb,
+    methods,
+    MALDIquant,
+    magrittr
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.2.2
+RoxygenNote: 7.2.3
