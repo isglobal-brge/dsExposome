@@ -12,7 +12,7 @@
 #' @return \code{data.frame} With exposures and phenotypes
 #' @export
 
-exposures_pData <- function(exposomeSet, target = "all", exposures_type = NULL) {
+exposures_pData <- function(exposomeSet, target = "all", rownames2col = FALSE, exposures_type = NULL) {
 
   if(target == "all"){
     data <- cbind(rexposome::expos(exposomeSet), Biobase::pData(exposomeSet))
@@ -30,6 +30,10 @@ exposures_pData <- function(exposomeSet, target = "all", exposures_type = NULL) 
   }
   
   else{stop("Incorrect 'target' argument. Options: 'all', 'exposures' and 'phenotypes'", call.=FALSE)}
+  
+  if(rownames2col){
+    data %>% tibble::rownames_to_column("id") -> data
+  }
   
   return(data)
 
