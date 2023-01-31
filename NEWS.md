@@ -1,3 +1,5 @@
+# dsExposome (development version)
+
 # dsExposome 2.0.7
 
 + added argument `rownames2col` to the function `exposures_pData` to be able to retrieve the ids and later merge
