@@ -1,5 +1,9 @@
 # dsExposome (development version)
 
++ added argument `rownames2col` to the function `exposures_pData` to be able to retrieve the ids and later merge
+
+# dsExposome 2.0.6
+
 Added a new resource resolver to
 
 + load NetCDF data
@@ -9,8 +13,6 @@ Added a new resource resolver to
 This allows us to create new exposure data to be analyzed as an ExposomeSet object with the already present `dsExposome` functions.
 
 Preliminary version, testing to be performed soon as well as throughout documentation in a vignette or bookdown on `dsExposomeClient` repo
-
-# dsExposome 2.0.6
 
 # dsExposome 2.0.4
 
