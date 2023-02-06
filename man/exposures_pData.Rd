@@ -4,7 +4,12 @@
 \alias{exposures_pData}
 \title{Exposures and phenotyphes data}
 \usage{
-exposures_pData(exposomeSet, target = "all", exposures_type = NULL)
+exposures_pData(
+  exposomeSet,
+  target = "all",
+  rownames2col = FALSE,
+  exposures_type = NULL
+)
 }
 \arguments{
 \item{exposomeSet}{\code{ExposomeSet} Exposome Set object}
