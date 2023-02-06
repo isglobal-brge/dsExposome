@@ -28,4 +28,5 @@ AggregateMethods:
   invExWASDS,
   exposome_HCPCDS,
   exposome_pca_pooledDS,
-  exposome_scale_exposures_meansDS
+  exposome_scale_exposures_meansDS,
+  netcdf_varsDS

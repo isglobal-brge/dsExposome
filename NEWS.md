@@ -1,3 +1,7 @@
+# dsExposome (development version)
+
++ added function `netcdf_varsDS` to retrieve the variables of a netcdf object
+
 # dsExposome 2.0.7
 
 + added argument `rownames2col` to the function `exposures_pData` to be able to retrieve the ids and later merge
