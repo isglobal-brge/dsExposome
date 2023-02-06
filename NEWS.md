@@ -1,3 +1,5 @@
+# dsExposome (development version)
+
 # dsExposome 2.0.8
 
 + added function `netcdf_varsDS` to retrieve the variables of a netcdf object
