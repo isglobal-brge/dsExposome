@@ -1,4 +1,4 @@
-# dsExposome (development version)
+# dsExposome 2.0.9
 
 + solved bug on loadExposomeDS affecting single exposure sets
 + added `addExposure2ExposomeSetDS`
