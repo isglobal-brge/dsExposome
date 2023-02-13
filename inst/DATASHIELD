@@ -8,13 +8,15 @@ AssignMethods:
   exposome_pcaDS,
   standardizeDS,
   addPhenoData2ExposomeSetDS,
+  addExposure2ExposomeSetDS,
   extractExposomeSetFromImputedSetDS,
   exposome_pca_pooled_addPCDS,
   exposome_scale_exposuresDS,
   ncvar_getDS,
   ncatt_getDS,
   NetCDF_fillvalue_matrixDS,
-  get_exposure_from_geoDS
+  get_exposure_from_geoDS,
+  transformDS
 AggregateMethods:
   exposureNamesDS,
   phenotypeNamesDS,
