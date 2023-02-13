@@ -1,5 +1,9 @@
 # dsExposome (development version)
 
++ solved bug on loadExposomeDS affecting single exposure sets
++ added `addExposure2ExposomeSetDS`
++ added `transformDS`
+
 # dsExposome 2.0.8
 
 + added function `netcdf_varsDS` to retrieve the variables of a netcdf object
