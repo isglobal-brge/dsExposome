@@ -49,7 +49,7 @@ loadExposomeDS <- function(exposures, description, phenotype, exposures.idcol = 
   } else{
     description <- as.data.frame(description)
     row.names(description) <- unlist(description[, description.expCol])
-    description <- description[ , !(names(description) %in% description.expCol)]
+    description <- description[ , !(names(description) %in% description.expCol), drop = FALSE]
   }
   
   exposome <- rexposome::loadExposome(exposures, description, phenotype, description.famCol,
