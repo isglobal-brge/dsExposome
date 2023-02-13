@@ -2,7 +2,7 @@
 #'
 #' @param Set `ExposomeSet` which exposures will be transformed
 #' @param exposure `character` Name of the exposure to be transformed
-#' @param method 	Function to be applied to the exposure
+#' @param method 	`fun` Function to be applied to the exposure
 #'
 #' @return `ExposomeSet` with a transformed exposure
 #' @export

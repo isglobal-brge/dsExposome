@@ -11,7 +11,7 @@ transformDS(Set, exposure, method)
 
 \item{exposure}{`character` Name of the exposure to be transformed}
 
-\item{method}{Function to be applied to the exposure}
+\item{method}{`fun` Function to be applied to the exposure}
 }
 \value{
 `ExposomeSet` with a transformed exposure
